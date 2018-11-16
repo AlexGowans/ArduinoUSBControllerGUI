@@ -41,12 +41,12 @@ namespace ControllerGUI {
         private UInt16 leftBtn;
         private UInt16 downBtn;
         private UInt16 rightBtn;
-        private UInt16 oneBtn;
-        private UInt16 twoBtn;
-        private UInt16 threeBtn;
         private UInt16 aBtn;
         private UInt16 bBtn;
-        private UInt16 cBtn;
+        private UInt16 xBtn;
+        private UInt16 yBtn;
+        private UInt16 lBtn;
+        private UInt16 rBtn;
 
         private Int32 recChkSum;
 
@@ -192,12 +192,12 @@ namespace ControllerGUI {
                                     downBtn = Convert.ToUInt16(received.Substring(8, 1));
                                     rightBtn = Convert.ToUInt16(received.Substring(9, 1));
 
-                                    oneBtn = Convert.ToUInt16(received.Substring(10, 1));
-                                    twoBtn = Convert.ToUInt16(received.Substring(11, 1));
-                                    threeBtn = Convert.ToUInt16(received.Substring(12, 1));
-                                    aBtn = Convert.ToUInt16(received.Substring(13, 1));
-                                    bBtn = Convert.ToUInt16(received.Substring(14, 1));
-                                    cBtn = Convert.ToUInt16(received.Substring(15, 1));
+                                    aBtn = Convert.ToUInt16(received.Substring(10, 1));
+                                    bBtn = Convert.ToUInt16(received.Substring(11, 1));
+                                    xBtn = Convert.ToUInt16(received.Substring(12, 1));
+                                    yBtn = Convert.ToUInt16(received.Substring(13, 1));
+                                    lBtn = Convert.ToUInt16(received.Substring(14, 1));
+                                    rBtn = Convert.ToUInt16(received.Substring(15, 1));
                                     //theres one more not used yet
                                     #endregion
 
@@ -206,12 +206,12 @@ namespace ControllerGUI {
                                     txtLeftBtn.Text = Convert.ToString(leftBtn);
                                     txtDownBtn.Text = Convert.ToString(downBtn);
                                     txtRightBtn.Text = Convert.ToString(rightBtn);
-                                    txtOneBtn.Text = Convert.ToString(oneBtn);
-                                    txtTwoBtn.Text = Convert.ToString(twoBtn);
-                                    txtThreeBtn.Text = Convert.ToString(threeBtn);
                                     txtABtn.Text = Convert.ToString(aBtn);
                                     txtBBtn.Text = Convert.ToString(bBtn);
-                                    txtCBtn.Text = Convert.ToString(cBtn);
+                                    txtXBtn.Text = Convert.ToString(xBtn);
+                                    txtYBtn.Text = Convert.ToString(yBtn);
+                                    txtLBtn.Text = Convert.ToString(lBtn);
+                                    txtRBtn.Text = Convert.ToString(rBtn);
                                     #endregion
 
                                     #region Activate Keys
@@ -224,18 +224,18 @@ namespace ControllerGUI {
                                     if (rightBtn == 1) gameController.RightPress();
                                     else gameController.RightRelease(); //simulate release 
 
-                                    if (oneBtn == 1) gameController.OnePress();
-                                    else gameController.OneRelease(); //simulate release 
-                                    if (twoBtn == 1) gameController.TwoPress();
-                                    else gameController.TwoRelease(); //simulate release 
-                                    if (threeBtn == 1) gameController.ThreePress();
-                                    else gameController.ThreeRelease(); //simulate release 
-                                    if (aBtn == 1) gameController.ThreePress();
-                                    else gameController.ThreeRelease(); //simulate release 
-                                    if (bBtn == 1) gameController.ThreePress();
-                                    else gameController.ThreeRelease(); //simulate release 
-                                    if (cBtn == 1) gameController.ThreePress();
-                                    else gameController.UpRelease(); //simulate release 
+                                    if (aBtn == 1) gameController.APress();
+                                    else gameController.ARelease(); //simulate release 
+                                    if (bBtn == 1) gameController.BPress();
+                                    else gameController.BRelease(); //simulate release 
+                                    if (xBtn == 1) gameController.XPress();
+                                    else gameController.XRelease(); //simulate release 
+                                    if (yBtn == 1) gameController.YPress();
+                                    else gameController.YRelease(); //simulate release 
+                                    if (lBtn == 1) gameController.LPress();
+                                    else gameController.LRelease(); //simulate release 
+                                    if (rBtn == 1) gameController.RPress();
+                                    else gameController.RRelease(); //simulate release 
                                     #endregion
 
 

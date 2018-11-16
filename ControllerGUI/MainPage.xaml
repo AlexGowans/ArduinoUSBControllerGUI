@@ -49,18 +49,18 @@
                 <TextBlock x:Name="txtDownBtn" Text="0" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtRightBtnTitle" Text="Right]" Margin="40,10,0,0"/>
                 <TextBlock x:Name="txtRightBtn" Text="0" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtOneBtnTitle" Text="One]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtOneBtn" Text="0" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtTwoBtnTitle" Text="Two]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtTwoBtn" Text="0" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtThreeBtnTitle" Text="Three]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtThreeBtn" Text="0" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtABtnTitle" Text="A]" Margin="40,10,0,0"/>
                 <TextBlock x:Name="txtABtn" Text="0" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtBBtnTitle" Text="B]" Margin="40,10,0,0"/>
                 <TextBlock x:Name="txtBBtn" Text="0" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtCBtnTitle" Text="C]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtCBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtXBtnTitle" Text="X]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtXBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtYBtnTitle" Text="Y]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtYBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtLBtnTitle" Text="L]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtLBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtRBtnTitle" Text="R]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtRBtn" Text="0" Margin="10,10,0,0"/>
             </StackPanel>
         </StackPanel>
     </Grid>

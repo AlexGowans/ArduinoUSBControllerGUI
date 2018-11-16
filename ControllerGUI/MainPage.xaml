@@ -16,7 +16,7 @@
                 <Button x:Name="btnWrite" Content="Write" Margin="10,10,0,0"
                         Click="btnWrite_Click"/>
             </StackPanel>
-            <TextBlock Text="Select yo Serial Device:"/>
+            <TextBlock Text="Select your Controller:"/>
             <ListBox x:Name="lstSerialDevices" Height="100">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -27,12 +27,6 @@
             <TextBlock x:Name="txtMessage" Text="Message" Margin="10,10,0,0"/>
             <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
                 <TextBlock x:Name="txtPacketNum" Text="Packet Number" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtAN0" Text="AN0" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtAN1" Text="AN1" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtAN2" Text="AN2" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtAN3" Text="AN3" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtAN4" Text="AN4" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtAN5" Text="AN5" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtBinOut" Text="Binary" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtChkSum" Text="ChkSum" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtCalChkSum" Text="Calculate ChkSum" Margin="10,10,0,0"/>
@@ -46,16 +40,26 @@
                 Text="###010000289\r\n"/>
             <!-- Preformated value-->
             <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
-                <TextBlock x:Name="txtSolarVoltTitle" Text="V Solar]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtSolarVolt" Text="0.0" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtBatteryVoltTitle" Text="V Bat]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtBatteryVolt" Text="0.0" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtBatterCurrentTitle" Text="I Bat]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtBatteryCurrent" Text="0.0" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtLed1CurrentTitle" Text="I LED1]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtLed1Current" Text="0.0" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtLed2CurrentTitle" Text="I Led2]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtLed2Current" Text="0.0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtUpBtnTitle" Text="Up]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtUpBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtLeftBtnTitle" Text="Left]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtLeftBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtDownBtnTitle" Text="Down]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtDownBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtRightBtnTitle" Text="Right]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtRightBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtOneBtnTitle" Text="One]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtOneBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtTwoBtnTitle" Text="Two]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtTwoBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtThreeBtnTitle" Text="Three]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtThreeBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtABtnTitle" Text="A]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtABtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtBBtnTitle" Text="B]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtBBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtCBtnTitle" Text="C]" Margin="40,10,0,0"/>
+                <TextBlock x:Name="txtCBtn" Text="0" Margin="10,10,0,0"/>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -15,7 +15,7 @@ namespace ControllerGUI {
 
         InputInjector inputInjector = InputInjector.TryCreate();
 
-        private int mode = 0; //0: keyboard mapping || 1: Gamepad mapping
+        
 
         private bool upPressed = false;
         private bool leftPressed = false;
@@ -27,9 +27,9 @@ namespace ControllerGUI {
         private bool xPressed = false;
         private bool yPressed = false;
         private bool lPressed = false;
-        private bool rPressed = false;
+        private bool rPressed = false;       
 
-
+        private int mode = 0; //0: keyboard mapping || 1: Gamepad mapping
         #region Global KeyBinds KeyBoardMode
         //Default bindings
         private ushort upBtn    = 0x57;    //w
@@ -63,7 +63,6 @@ namespace ControllerGUI {
         public ushort LKey { get { return lBtn; } }
         public ushort RKey { get { return rBtn; } }
         #endregion
-
 
         #region Press Event (called on packet receive) KEYBOARD MODE
         //Up

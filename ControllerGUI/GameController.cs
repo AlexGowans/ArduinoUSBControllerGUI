@@ -50,8 +50,8 @@ namespace ControllerGUI {
 
         #region Keys to give to imported input
         public ushort UpKey { get { return upBtn; } }
-        public ushort LeftKey { get { return downBtn; } }
-        public ushort DownKey { get { return leftBtn; } }
+        public ushort LeftKey { get { return leftBtn; } }
+        public ushort DownKey { get { return downBtn; } }
         public ushort RightKey { get { return rightBtn; } }
 
         public ushort OneKey { get { return oneBtn; } }

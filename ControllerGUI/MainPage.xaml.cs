@@ -201,6 +201,7 @@ namespace ControllerGUI {
                                     //theres one more not used yet
                                     #endregion
 
+                                    #region Display Input States for user
                                     txtUpBtn.Text = Convert.ToString(upBtn);
                                     txtLeftBtn.Text = Convert.ToString(leftBtn);
                                     txtDownBtn.Text = Convert.ToString(downBtn);
@@ -211,6 +212,33 @@ namespace ControllerGUI {
                                     txtABtn.Text = Convert.ToString(aBtn);
                                     txtBBtn.Text = Convert.ToString(bBtn);
                                     txtCBtn.Text = Convert.ToString(cBtn);
+                                    #endregion
+
+                                    #region Activate Keys
+                                    if (upBtn == 1) gameController.UpPress();
+                                    else gameController.UpRelease(); //simulate release  
+                                    if (leftBtn == 1) gameController.LeftPress();
+                                    else gameController.LeftRelease(); //simulate release
+                                    if (downBtn == 1) gameController.DownPress();
+                                    else gameController.DownRelease(); //simulate release 
+                                    if (rightBtn == 1) gameController.RightPress();
+                                    else gameController.RightRelease(); //simulate release 
+
+                                    if (oneBtn == 1) gameController.OnePress();
+                                    else gameController.OneRelease(); //simulate release 
+                                    if (twoBtn == 1) gameController.TwoPress();
+                                    else gameController.TwoRelease(); //simulate release 
+                                    if (threeBtn == 1) gameController.ThreePress();
+                                    else gameController.ThreeRelease(); //simulate release 
+                                    if (aBtn == 1) gameController.ThreePress();
+                                    else gameController.ThreeRelease(); //simulate release 
+                                    if (bBtn == 1) gameController.ThreePress();
+                                    else gameController.ThreeRelease(); //simulate release 
+                                    if (cBtn == 1) gameController.ThreePress();
+                                    else gameController.UpRelease(); //simulate release 
+                                    #endregion
+
+
                                 }
                                 #endregion
                                 received = "";//Clear the buffer for the next pass

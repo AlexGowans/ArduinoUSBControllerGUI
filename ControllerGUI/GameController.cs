@@ -15,7 +15,7 @@ namespace ControllerGUI {
 
         InputInjector inputInjector = InputInjector.TryCreate();
 
-        
+        //private SaveLoad saveLoad;
 
         private bool upPressed = false;
         private bool leftPressed = false;
@@ -29,8 +29,11 @@ namespace ControllerGUI {
         private bool lPressed = false;
         private bool rPressed = false;       
 
-        private int mode = 0; //0: keyboard mapping || 1: Gamepad mapping
-        #region Global KeyBinds KeyBoardMode
+
+        #region Saved Data] Keybinds and Settings
+        //Settings
+        public int mode = 0; //0: keyboard mapping || 1: Gamepad mapping
+
         //Default bindings
         private ushort upBtn    = 0x57;    //w
         private ushort leftBtn  = 0x41;    //a
@@ -42,13 +45,35 @@ namespace ControllerGUI {
         private ushort xBtn = 0x4F;    //o
         private ushort yBtn = 0x4A;    //j
         private ushort lBtn = 0x4B;    //k
-        private ushort rBtn = 0x4C;    //l
-        
-
-        public GameController() {   //read from saved file if it exists and overrite defaults
-
-        }
+        private ushort rBtn = 0x4C;    //l       
         #endregion
+
+        //CONSTRUCTOR] Load values or save if none
+        public GameController() {
+            ////Try and load the key bindings
+            Data data = SaveLoad.Load();
+            //No key bindings saved
+            if (data.mode == 99) {
+                //Save defaults instead
+                data = new Data(mode, upBtn, leftBtn, downBtn, rightBtn, aBtn, bBtn, xBtn, yBtn, lBtn, rBtn);
+                SaveLoad.Save(data);
+            }
+            //Assign Loaded values, will just reassign defualts if loaded was null
+            mode = data.mode;
+
+            upBtn = data.upBtn;
+            leftBtn = data.leftBtn;
+            downBtn = data.downBtn;
+            rightBtn = data.rightBtn;
+
+            aBtn = data.aBtn;
+            bBtn = data.bBtn;
+            xBtn = data.xBtn;
+            yBtn = data.yBtn;
+            lBtn = data.lBtn;
+            rBtn = data.rBtn;
+        }
+
 
         #region Keys to give to imported input KEYBOARD MODE
         public ushort UpKey { get { return upBtn; } }

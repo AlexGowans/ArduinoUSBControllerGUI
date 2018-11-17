@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ControllerGUI {
-    class Data {
+    public class Data {
 
         public int mode { get; set; }
    
@@ -20,6 +20,24 @@ namespace ControllerGUI {
         public ushort yBtn { get; set; }
         public ushort lBtn { get; set; }
         public ushort rBtn { get; set; }
+
+
+        public Data(int _mode, ushort up, ushort left, ushort down, ushort right, ushort a, ushort b, ushort x, ushort y, ushort l, ushort r) {
+            mode = _mode;
+
+            upBtn = up;
+            leftBtn = left;
+            downBtn = down;
+            rightBtn = right;
+
+            aBtn = a;
+            bBtn = b;
+            xBtn = x;
+            yBtn = y;
+            lBtn = l;
+            rBtn = r;
+
+        }
 
 
     }

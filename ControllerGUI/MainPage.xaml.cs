@@ -50,7 +50,7 @@ namespace ControllerGUI {
 
         private Int32 recChkSum;
 
-        private GameController gameController;
+        private GameController gameController = new GameController();
 
 
         public MainPage() {
@@ -60,7 +60,8 @@ namespace ControllerGUI {
 
             ListAvailablePorts();   //Get a port
 
-            gameController = new GameController();
+            //gameController = new GameController();
+            txtDebug.Text = Convert.ToString(gameController.mode);
         }
 
         #region CONNECT AND LISTEN
@@ -87,6 +88,7 @@ namespace ControllerGUI {
         private void btnConnectToDevice_Click(object sender, RoutedEventArgs e) {
             SerialPortConfiguration();
         }
+        
         //Serial Config
         private async void SerialPortConfiguration() {
             var selection = lstSerialDevices.SelectedItems;

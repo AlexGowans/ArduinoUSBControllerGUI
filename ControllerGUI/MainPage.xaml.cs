@@ -59,13 +59,11 @@ namespace ControllerGUI {
             listOfDevices = new ObservableCollection<DeviceInformation>();  //Prepare our list
 
             ListAvailablePorts();   //Get a port
-
-            //gameController = new GameController();
-            txtDebug.Text = Convert.ToString(gameController.mode);
         }
 
         #region CONNECT AND LISTEN
         //Get every connected device in a list
+        
         private async void ListAvailablePorts() {
             try {   //I love try catch
                 string aqs = SerialDevice.GetDeviceSelector();
@@ -83,7 +81,7 @@ namespace ControllerGUI {
                 txtMessage.Text = ex.Message;       //Dont message your ex, bad idea
             }
         }
-
+        
         //Click to initiate
         private void btnConnectToDevice_Click(object sender, RoutedEventArgs e) {
             SerialPortConfiguration();

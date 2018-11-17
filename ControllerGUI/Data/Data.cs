@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ControllerGUI {
+    [Serializable]
     public class Data {
 
         public int mode { get; set; }

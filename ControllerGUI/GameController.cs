@@ -34,18 +34,18 @@ namespace ControllerGUI {
         //Settings
         public int mode = 0; //0: keyboard mapping || 1: Gamepad mapping
 
-        //Default bindings
-        private ushort upBtn    = 0x57;    //w
-        private ushort leftBtn  = 0x41;    //a
-        private ushort downBtn  = 0x53;    //s        
-        private ushort rightBtn = 0x44;    //d
+        //Key Bindings
+        private ushort upBtn;
+        private ushort leftBtn;
+        private ushort downBtn;
+        private ushort rightBtn;
 
-        private ushort aBtn   = 0x55;    //u
-        private ushort bBtn   = 0x49;    //i
-        private ushort xBtn = 0x4F;    //o
-        private ushort yBtn = 0x4A;    //j
-        private ushort lBtn = 0x4B;    //k
-        private ushort rBtn = 0x4C;    //l       
+        private ushort aBtn;
+        private ushort bBtn;
+        private ushort xBtn;
+        private ushort yBtn;
+        private ushort lBtn;
+        private ushort rBtn;       
         #endregion
 
         //CONSTRUCTOR] Load values or save if none
@@ -55,10 +55,10 @@ namespace ControllerGUI {
             //No key bindings saved
             if (data.mode == 99) {
                 //Save defaults instead
-                data = new Data(mode, upBtn, leftBtn, downBtn, rightBtn, aBtn, bBtn, xBtn, yBtn, lBtn, rBtn);
+                data = new Data(mode);
                 SaveLoad.Save(data);
             }
-            //Assign Loaded values, will just reassign defualts if loaded was null
+            //Assign Loaded values, will just assign defualts if no file found
             mode = data.mode;
 
             upBtn = data.upBtn;
@@ -224,7 +224,7 @@ namespace ControllerGUI {
             }
         }
 
-        //1
+        //A
         public void APress() {
             if (!aPressed) {
                 aPressed = true;
@@ -247,7 +247,7 @@ namespace ControllerGUI {
                 }                
             }
         }
-        //2
+        //B
         public void BPress() {
             if (!bPressed) {
                 bPressed = true;
@@ -270,7 +270,7 @@ namespace ControllerGUI {
                 }
             }
         }
-        //3
+        //X
         public void XPress() {
             if (!xPressed) {
                 xPressed = true;
@@ -293,7 +293,7 @@ namespace ControllerGUI {
                 }                
             }
         }
-        //A
+        //Y
         public void YPress() {
             if (!yPressed) {
                 yPressed = true;
@@ -316,7 +316,7 @@ namespace ControllerGUI {
                 }                
             }
         }
-        //B
+        //L
         public void LPress() {
             if (!lPressed) {
                 lPressed = true;
@@ -340,7 +340,7 @@ namespace ControllerGUI {
                 }                
             }
         }
-        //C
+        //R
         public void RPress() {
             if (!rPressed) {
                 rPressed = true;

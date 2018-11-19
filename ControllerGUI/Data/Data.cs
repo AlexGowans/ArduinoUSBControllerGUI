@@ -9,6 +9,7 @@ namespace ControllerGUI {
     public class Data {
 
         public int mode { get; set; }
+
    
         public ushort upBtn { get; set; }
         public ushort leftBtn { get; set; }
@@ -22,8 +23,8 @@ namespace ControllerGUI {
         public ushort lBtn { get; set; }
         public ushort rBtn { get; set; }
 
-
-        public Data(int _mode, ushort up, ushort left, ushort down, ushort right, ushort a, ushort b, ushort x, ushort y, ushort l, ushort r) {
+        
+        public Data(int _mode, ushort up = 0x57, ushort left = 0x41, ushort down = 0x53, ushort right = 0x44, ushort a = 0x55, ushort b = 0x49, ushort x =  0x4F, ushort y = 0x4A, ushort l = 0x4B, ushort r = 0x4C) {
             mode = _mode;
 
             upBtn = up;

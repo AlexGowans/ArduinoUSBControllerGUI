@@ -31,7 +31,4 @@ https://blog.mzikmund.com/2018/01/injecting-input-in-uwp-apps/
 https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.preview.injection
 
 Data Management:
-	Filepath
-	https://stackoverflow.com/questions/11967302/c-sharp-file-handling-create-file-in-directory-where-executable-exists
-	Binary Serialization
-	https://www.youtube.com/watch?v=sWWZZByVvlU
+	https://docs.microsoft.com/en-us/windows/uwp/get-started/settings-learning-track

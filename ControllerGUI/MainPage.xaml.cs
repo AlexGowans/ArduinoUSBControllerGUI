@@ -83,7 +83,7 @@ namespace ControllerGUI {
         }
         
         //Click to initiate
-        private void btnConnectToDevice_Click(object sender, RoutedEventArgs e) {
+        private void btnConnectToDevice_Click(object sender, RoutedEventArgs e) { 
             SerialPortConfiguration();
         }
         

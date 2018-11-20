@@ -43,7 +43,6 @@ namespace ControllerGUI {
 
 
 
-
         #region FIND DEVICES
         public async void ListAvailablePorts() {
             listOfDevices = new ObservableCollection<DeviceInformation>();  //Prepare our list

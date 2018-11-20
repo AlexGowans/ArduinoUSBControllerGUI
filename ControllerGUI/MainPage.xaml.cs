@@ -27,19 +27,13 @@ namespace ControllerGUI {
     /// </summary>
     public sealed partial class MainPage : Page {
 
-        private SerialController serialController = new SerialController();
-
-        
-
+        private SerialController serialController = new SerialController();    
 
         public MainPage() {
             this.InitializeComponent();
 
-            RefreshDeviceList();
-            
+            RefreshDeviceList();           
         }
-
-
 
         private void RefreshDeviceList() {
             serialController.ListAvailablePorts();   //Get a port
@@ -47,7 +41,9 @@ namespace ControllerGUI {
             lstSerialDevices.SelectedIndex = -1;
         }
 
+        
 
+        #region Buttons
         //Click to initiate
         private void btnConnectToDevice_Click(object sender, RoutedEventArgs e) {
             serialController.SerialPortConfiguration(lstSerialDevices.SelectedItems);
@@ -57,6 +53,7 @@ namespace ControllerGUI {
         private void btnWrite_Click(object sender, RoutedEventArgs e) {
             serialController.PreparePacketSend(txtSend.Text.ToString());
         }
+        #endregion
 
 
     }

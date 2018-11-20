@@ -36,7 +36,21 @@ namespace ControllerGUI {
         }
 
         public static void Save(Data data) {
+            localSettings.Values["First Run"] = "initialised";
 
+            localSettings.Values["Mode"] = data.mode;
+
+            localSettings.Values["upBtn"] = data.upBtn;
+            localSettings.Values["leftBtn"] = data.leftBtn;
+            localSettings.Values["downBtn"] = data.downBtn;
+            localSettings.Values["rightBtn"] = data.rightBtn;
+
+            localSettings.Values["aBtn"] = data.aBtn;
+            localSettings.Values["bBtn"] = data.bBtn;
+            localSettings.Values["xBtn"] = data.xBtn;
+            localSettings.Values["yBtn"] = data.yBtn;
+            localSettings.Values["lBtn"] = data.lBtn;
+            localSettings.Values["rBtn"] = data.rBtn;
         }
 
     }

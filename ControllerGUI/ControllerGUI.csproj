@@ -96,7 +96,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Data.cs" />
-    <Compile Include="GameController.cs" />
+    <Compile Include="Gamepad\SerialController.cs" />
+    <Compile Include="Gamepad\GameController.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

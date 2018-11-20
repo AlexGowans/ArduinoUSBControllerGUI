@@ -16,6 +16,8 @@ using Windows.Storage.Streams;
 namespace ControllerGUI {
     class SerialController {
 
+        //MainPage mw = Application.Current.Resources.OfType<MainPage>().FirstOrDefault();
+
         private SerialDevice serialPort = null;     //Our port/device
 
         DataWriter dataWriterObject = null;         //So we can write
@@ -41,6 +43,25 @@ namespace ControllerGUI {
 
         private GameController gameController = new GameController();
 
+        public string txtMessage;
+        public string txtReceived;
+        public string txtCalChkSum;
+        public string txtChkSum;
+        public string txtPacketNum;
+        public string txtBinOut;
+
+        public string txtUpBtn;
+        public string txtLeftBtn;
+        public string txtDownBtn;
+        public string txtRightBtn;
+
+        public string txtABtn;
+        public string txtBBtn;
+        public string txtXBtn;
+        public string txtYBtn;
+        public string txtLBtn;
+        public string txtRBtn;
+
 
 
         #region FIND DEVICES
@@ -57,7 +78,7 @@ namespace ControllerGUI {
                 
             }
             catch (Exception ex) {
-                txtMessage.Text = ex.Message;       //Dont message your ex, bad idea
+                txtMessage = ex.Message;       //Dont message your ex, bad idea
             }
         }
         #endregion
@@ -67,7 +88,7 @@ namespace ControllerGUI {
         public async void SerialPortConfiguration(IList<Object> selection) {
             //Nothing selected
             if (selection.Count <= 0) {
-                txtMessage.Text = "You forgot to pick a device";
+                txtMessage = "You forgot to pick a device";
                 return;
             }
             //Somthing selected
@@ -82,14 +103,14 @@ namespace ControllerGUI {
                 serialPort.StopBits = SerialStopBitCount.One;   //and1
                 serialPort.DataBits = 8;                        //8
                 serialPort.Handshake = SerialHandshake.None;    //or is this n?
-                txtMessage.Text = "Serial port correctly configured!";      //Report success to user
+                txtMessage = "Serial port correctly configured!";      //Report success to user
 
                 readCancellationTokenSource = new CancellationTokenSource();        //cancellation token
 
                 Listen();   //begin listening
             }
             catch (Exception ex) {
-                txtMessage.Text = ex.Message;   //Shows your error // fitting?
+                txtMessage = ex.Message;   //Shows your error // fitting?
             }
         }
         //Listen
@@ -104,7 +125,7 @@ namespace ControllerGUI {
                 }
             }
             catch (Exception ex) {
-                txtMessage.Text = ex.Message;
+                txtMessage = ex.Message;
 
                 //if (ex.GetType.Name=="TaskCanelledExcption")      //Wayne left this here commented
             }
@@ -144,7 +165,7 @@ namespace ControllerGUI {
                                 for (int i = 3; i < 17; i++) {
                                     calChkSum += (byte)received[i];
                                 }
-                                txtCalChkSum.Text = Convert.ToString(calChkSum);
+                                txtCalChkSum = Convert.ToString(calChkSum);
 
                                 recChkSum = Convert.ToInt32(received.Substring(17, 3));
                                 calChkSum %= 1000;
@@ -153,11 +174,11 @@ namespace ControllerGUI {
                                 #region Packet is Legit
                                 if (recChkSum == calChkSum) {
                                     #region Display Raw Data : Debuging
-                                    txtReceived.Text = received + txtReceived.Text;
+                                    txtReceived = received + txtReceived;
                                     //###,packetId,BinaryInputs                               
-                                    txtPacketNum.Text = received.Substring(3, 3);   // 3 is where packet num start and it is 3 long] 0,1,2 are ###
-                                    txtBinOut.Text = received.Substring(6, 11);     //11 bit binary inputs
-                                    txtChkSum.Text = received.Substring(17, 3);     //Check Sum
+                                    txtPacketNum = received.Substring(3, 3);   // 3 is where packet num start and it is 3 long] 0,1,2 are ###
+                                    txtBinOut = received.Substring(6, 11);     //11 bit binary inputs
+                                    txtChkSum = received.Substring(17, 3);     //Check Sum
                                     #endregion
 
 
@@ -177,16 +198,16 @@ namespace ControllerGUI {
                                     #endregion
 
                                     #region Display Input States for user
-                                    txtUpBtn.Text = Convert.ToString(upBtn);
-                                    txtLeftBtn.Text = Convert.ToString(leftBtn);
-                                    txtDownBtn.Text = Convert.ToString(downBtn);
-                                    txtRightBtn.Text = Convert.ToString(rightBtn);
-                                    txtABtn.Text = Convert.ToString(aBtn);
-                                    txtBBtn.Text = Convert.ToString(bBtn);
-                                    txtXBtn.Text = Convert.ToString(xBtn);
-                                    txtYBtn.Text = Convert.ToString(yBtn);
-                                    txtLBtn.Text = Convert.ToString(lBtn);
-                                    txtRBtn.Text = Convert.ToString(rBtn);
+                                    txtUpBtn = Convert.ToString(upBtn);
+                                    txtLeftBtn = Convert.ToString(leftBtn);
+                                    txtDownBtn = Convert.ToString(downBtn);
+                                    txtRightBtn = Convert.ToString(rightBtn);
+                                    txtABtn = Convert.ToString(aBtn);
+                                    txtBBtn = Convert.ToString(bBtn);
+                                    txtXBtn = Convert.ToString(xBtn);
+                                    txtYBtn = Convert.ToString(yBtn);
+                                    txtLBtn = Convert.ToString(lBtn);
+                                    txtRBtn = Convert.ToString(rBtn);
                                     #endregion
 
                                     #region Activate Keys
@@ -255,11 +276,11 @@ namespace ControllerGUI {
 
                 UInt32 bytesWritten = await storeAsyncTask;
                 if (bytesWritten > 0) {
-                    txtMessage.Text = "Value sent correctly";
+                    txtMessage = "Value sent correctly";
                 }
             }
             else {
-                txtMessage.Text = "No value sent yo";
+                txtMessage = "No value sent yo";
             }
         }
         #endregion

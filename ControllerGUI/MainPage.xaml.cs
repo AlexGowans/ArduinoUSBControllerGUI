@@ -55,6 +55,12 @@ namespace ControllerGUI {
         }
         #endregion
 
+        public string MessageBox {
+            get{
+                return serialController.txtMessage;
+            }
+        }
+
 
     }
 }

@@ -24,7 +24,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <TextBlock x:Name="txtMessage" Text="Message" Margin="10,10,0,0"/>
+            <TextBlock x:Name="txtMessage" Text="{Binding MessageBox}" Margin="10,10,0,0" />
             <TextBlock x:Name="txtDebug" Text="Debug" Margin="10,10,0,0"/>
             <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
                 <TextBlock x:Name="txtPacketNum" Text="Packet Number" Margin="10,10,0,0"/>

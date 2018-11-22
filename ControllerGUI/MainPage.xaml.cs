@@ -35,7 +35,7 @@ namespace ControllerGUI {
             RefreshDeviceList();           
         }
 
-        private void RefreshDeviceList() {
+        private async void RefreshDeviceList() {
             serialController.ListAvailablePorts();   //Get a port
             lstSerialDevices.ItemsSource = serialController.listOfDevices; //Show list in XAML
             lstSerialDevices.SelectedIndex = -1;
@@ -45,12 +45,12 @@ namespace ControllerGUI {
 
         #region Buttons
         //Click to initiate
-        private void btnConnectToDevice_Click(object sender, RoutedEventArgs e) {
+        private async void btnConnectToDevice_Click(object sender, RoutedEventArgs e) {
             serialController.SerialPortConfiguration(lstSerialDevices.SelectedItems);
         }
 
         //Send
-        private void btnWrite_Click(object sender, RoutedEventArgs e) {
+        private async void btnWrite_Click(object sender, RoutedEventArgs e) {
             serialController.PreparePacketSend(txtSend.Text.ToString());
         }
         #endregion

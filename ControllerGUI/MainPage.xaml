@@ -7,61 +7,93 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+   
+    
+    
     <Grid>
         <StackPanel Orientation="Vertical" Margin="0,10,0,0" Grid.Row="1">
-            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            
+            <StackPanel Orientation="Vertical" Margin="10,10,0,0">
+                <TextBlock Text="Select your Controller:"/>
+                <ListBox x:Name="lstSerialDevices" Height="100" Width="500" HorizontalAlignment="Left">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Id}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <StackPanel Orientation="Horizontal" Margin="-10,0,0,0">
                 <Button x:Name="btnConnectToDevice" Content="Connect to Device"
                     Margin="10,10,0,0" Click="btnConnectToDevice_Click"/>
-                <Button x:Name="btnWrite" Content="Write" Margin="10,10,0,0"
-                        Click="btnWrite_Click"/>
-            </StackPanel>
-            <TextBlock Text="Select your Controller:"/>
-            <ListBox x:Name="lstSerialDevices" Height="100">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Id}"/>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <TextBlock x:Name="txtMessage" Text="{Binding MessageBox}" Margin="10,10,0,0" />
-            <TextBlock x:Name="txtDebug" Text="Debug" Margin="10,10,0,0"/>
-            <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
-                <TextBlock x:Name="txtPacketNum" Text="Packet Number" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtBinOut" Text="Binary" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtChkSum" Text="ChkSum" Margin="10,10,0,0"/>
-                <TextBlock x:Name="txtCalChkSum" Text="Calculate ChkSum" Margin="10,10,0,0"/>
+                    <TextBlock x:Name="txtMessage" Text="{Binding txtMessage}" Margin="10,10,0,0"/>
+                </StackPanel>
             </StackPanel>
 
-            <ScrollViewer VerticalScrollBarVisibility="Auto" Height="200">
+
+
+
+
+
+            <TextBlock x:Name="txtDebug" Text="Debug" Margin="10,10,0,0"/>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Height="200" Width="500" HorizontalAlignment="Left">
                 <TextBlock x:Name="txtReceived" Margin="10,10,0,0"
                            Text="Data Received"/>
             </ScrollViewer>
+                <StackPanel Orientation="Vertical" Margin="10,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="txtPacketNumTitle" Text="Packet Number:" Margin="10,0,0,0"/>
+                        <TextBlock x:Name="txtPacketNum" Text="{Binding txtPacketNum}" Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="txtBinOutTitle" Text="Binary:" Margin="10,20,0,0"/>
+                        <TextBlock x:Name="txtBinOut" Text="{Binding txtBinOut}" Margin="10,0,0,0"/>
+                    </StackPanel>    
+                    <StackPanel Orientation="Horizontal">    
+                        <TextBlock x:Name="txtChkSumTitle" Text="Check Sum:" Margin="10,20,0,0"/>
+                        <TextBlock x:Name="txtChkSum" Text="{Binding txtChkSum}" Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="txtCalChkSumTitle" Text="Calculated Check Sum:" Margin="10,20,0,0"/>
+                        <TextBlock x:Name="txtCalChkSum" Text="{Binding txtCalChkSum}" Margin="10,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            
+
+
+            <Button x:Name="btnWrite" Content="Write" Margin="10,10,0,0"
+                        Click="btnWrite_Click"/>
             <TextBox x:Name="txtSend" Margin="10,10,0,0"
                 Text="###010000289\r\n"/>
             <!-- Preformated value-->
+            
+            
+            
             <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
                 <TextBlock x:Name="txtUpBtnTitle" Text="Up]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtUpBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtUpBtn" Text="{Binding txtUpBtn}" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtLeftBtnTitle" Text="Left]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtLeftBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtLeftBtn" Text="{Binding txtLeftBtn}" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtDownBtnTitle" Text="Down]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtDownBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtDownBtn" Text="{Binding txtDownBtn}" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtRightBtnTitle" Text="Right]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtRightBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtRightBtn" Text="{Binding txtRightBtn}" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtABtnTitle" Text="A]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtABtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtABtn" Text="{Binding txtABtn}" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtBBtnTitle" Text="B]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtBBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtBBtn" Text="{Binding txtBBtn}" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtXBtnTitle" Text="X]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtXBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtXBtn" Text="{Binding txtXBtn}" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtYBtnTitle" Text="Y]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtYBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtYBtn" Text="{Binding txtYBtn}" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtLBtnTitle" Text="L]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtLBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtLBtn" Text="{Binding txtLBtn}" Margin="10,10,0,0"/>
                 <TextBlock x:Name="txtRBtnTitle" Text="R]" Margin="40,10,0,0"/>
-                <TextBlock x:Name="txtRBtn" Text="0" Margin="10,10,0,0"/>
+                <TextBlock x:Name="txtRBtn" Text="{Binding txtRBtn}" Margin="10,10,0,0"/>
             </StackPanel>
+            
         </StackPanel>
     </Grid>
 </Page>

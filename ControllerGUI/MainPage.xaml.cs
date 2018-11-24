@@ -19,6 +19,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace ControllerGUI {
@@ -27,12 +28,14 @@ namespace ControllerGUI {
     /// </summary>
     public sealed partial class MainPage : Page {
 
+
         private SerialController serialController = new SerialController();    
 
         public MainPage() {
             this.InitializeComponent();
 
-            RefreshDeviceList();           
+            RefreshDeviceList();
+            DataContext = serialController;
         }
 
         private async void RefreshDeviceList() {
@@ -54,13 +57,6 @@ namespace ControllerGUI {
             serialController.PreparePacketSend(txtSend.Text.ToString());
         }
         #endregion
-
-        public string MessageBox {
-            get{
-                return serialController.txtMessage;
-            }
-        }
-
 
     }
 }

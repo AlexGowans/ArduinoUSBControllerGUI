@@ -11,10 +11,11 @@ using Windows.Devices.SerialCommunication;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage.Streams;
+using System.ComponentModel;
 
 
 namespace ControllerGUI {
-    class SerialController {
+    class SerialController : INotifyPropertyChanged {
 
         //MainPage mw = Application.Current.Resources.OfType<MainPage>().FirstOrDefault();
 
@@ -43,25 +44,143 @@ namespace ControllerGUI {
 
         private GameController gameController = new GameController();
 
-        public string txtMessage;
-        public string txtReceived;
-        public string txtCalChkSum;
-        public string txtChkSum;
-        public string txtPacketNum;
-        public string txtBinOut;
+        #region XAML BINDINGS
+        private string _txtMessage;
+        public string txtMessage {
+            get { return _txtMessage; }
+            set {
+                _txtMessage = value;
+                OnPropertyChanged("txtMessage");
+            }
+        }
+        private string _txtReceived;
+        public string txtReceived {
+            get { return _txtReceived; }
+            set {
+                _txtReceived = value;
+                OnPropertyChanged("txtReceived");
+            }
+        }
+        private string _txtCalChkSum;
+        public string txtCalChkSum {
+            get { return _txtCalChkSum; }
+            set {
+                _txtCalChkSum = value;
+                OnPropertyChanged("txtCalChkSum");
+            }
+        }
+        private string _txtChkSum;
+        public string txtChkSum {
+            get { return _txtMessage; }
+            set {
+                _txtChkSum = value;
+                OnPropertyChanged("txtChkSum");
+            }
+        }
+        private string _txtPacketNum;
+        public string txtPacketNum {
+            get { return _txtPacketNum; }
+            set {
+                _txtPacketNum = value;
+                OnPropertyChanged("txtPacketNum");
+            }
+        }
+        private string _txtBinOut;
+        public string txtBinOut {
+            get { return _txtBinOut; }
+            set {
+                _txtBinOut = value;
+                OnPropertyChanged("txtBinOut");
+            }
+        }
 
-        public string txtUpBtn;
-        public string txtLeftBtn;
-        public string txtDownBtn;
-        public string txtRightBtn;
+        private string _txtUpBtn;
+        public string txtUpBtn {
+            get { return _txtUpBtn; }
+            set {
+                _txtUpBtn = value;
+                OnPropertyChanged("txtUpBtn");
+            }
+        }
+        private string _txtLeftBtn;
+        public string txtLeftBtn {
+            get { return _txtLeftBtn; }
+            set {
+                _txtLeftBtn = value;
+                OnPropertyChanged("txtLeftBtn");
+            }
+        }
+        private string _txtDownBtn;
+        public string txtDownBtn {
+            get { return _txtDownBtn; }
+            set {
+                _txtDownBtn = value;
+                OnPropertyChanged("txtDownBtn");
+            }
+        }
+        private string _txtRightBtn;
+        public string txtRightBtn {
+            get { return _txtRightBtn; }
+            set {
+                _txtRightBtn = value;
+                OnPropertyChanged("txtRightBtn");
+            }
+        }
 
-        public string txtABtn;
-        public string txtBBtn;
-        public string txtXBtn;
-        public string txtYBtn;
-        public string txtLBtn;
-        public string txtRBtn;
+        private string _txtABtn;
+        public string txtABtn {
+            get { return _txtABtn; }
+            set {
+                _txtABtn = value;
+                OnPropertyChanged("txtABtn");
+            }
+        }
+        private string _txtBBtn;
+        public string txtBBtn {
+            get { return _txtBBtn; }
+            set {
+                _txtBBtn = value;
+                OnPropertyChanged("txtBBtn");
+            }
+        }
+        private string _txtXBtn;
+        public string txtXBtn {
+            get { return _txtXBtn; }
+            set {
+                _txtXBtn = value;
+                OnPropertyChanged("txtXBtn");
+            }
+        }
+        private string _txtYBtn;
+        public string txtYBtn {
+            get { return _txtYBtn; }
+            set {
+                _txtYBtn = value;
+                OnPropertyChanged("txtYBtn");
+            }
+        }
+        private string _txtLBtn;
+        public string txtLBtn {
+            get { return _txtLBtn; }
+            set {
+                _txtLBtn = value;
+                OnPropertyChanged("txtLBtn");
+            }
+        }
+        private string _txtRBtn;
+        public string txtRBtn {
+            get { return _txtRBtn; }
+            set {
+                _txtRBtn = value;
+                OnPropertyChanged("txtRBtn");
+            }
+        }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string propertyName) {
+            if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
 
 
         #region FIND DEVICES

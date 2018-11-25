@@ -45,7 +45,7 @@ namespace ControllerGUI {
         private GameController gameController = new GameController();
 
         #region XAML BINDINGS
-        private string _txtMessage;
+        private string _txtMessage = "No Device connected";
         public string txtMessage {
             get { return _txtMessage; }
             set {
@@ -61,7 +61,7 @@ namespace ControllerGUI {
                 OnPropertyChanged("txtReceived");
             }
         }
-        private string _txtCalChkSum;
+        private string _txtCalChkSum = "Null";
         public string txtCalChkSum {
             get { return _txtCalChkSum; }
             set {
@@ -69,15 +69,15 @@ namespace ControllerGUI {
                 OnPropertyChanged("txtCalChkSum");
             }
         }
-        private string _txtChkSum;
+        private string _txtChkSum = "Null";
         public string txtChkSum {
-            get { return _txtMessage; }
+            get { return _txtChkSum; }
             set {
                 _txtChkSum = value;
                 OnPropertyChanged("txtChkSum");
             }
         }
-        private string _txtPacketNum;
+        private string _txtPacketNum = "Null";
         public string txtPacketNum {
             get { return _txtPacketNum; }
             set {
@@ -85,12 +85,20 @@ namespace ControllerGUI {
                 OnPropertyChanged("txtPacketNum");
             }
         }
-        private string _txtBinOut;
+        private string _txtBinOut = "Null";
         public string txtBinOut {
             get { return _txtBinOut; }
             set {
                 _txtBinOut = value;
                 OnPropertyChanged("txtBinOut");
+            }
+        }
+        private string _txtErrorMsg = "All clear";
+        public string txtErrorMsg {
+            get { return _txtErrorMsg; }
+            set {
+                _txtErrorMsg = value;
+                OnPropertyChanged("txtErrorMsg");
             }
         }
 

@@ -26,6 +26,9 @@ User selected key mappings
 
 Sources:
 
+3D buttons:
+https://social.technet.microsoft.com/wiki/contents/articles/30199.make-a-styled-button-in-xaml-for-universal-windows-apps.aspx
+
 Injecting Input:
 https://blog.mzikmund.com/2018/01/injecting-input-in-uwp-apps/
 https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.preview.injection

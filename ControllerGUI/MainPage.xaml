@@ -67,6 +67,10 @@
                     <TextBlock x:Name="txtLBtn" Text="{Binding txtLBtn}" Margin="10,10,0,0"/>
                     <TextBlock x:Name="txtRBtnTitle" Text="R]" Margin="40,10,0,0"/>
                     <TextBlock x:Name="txtRBtn" Text="{Binding txtRBtn}" Margin="10,10,0,0"/>
+                    <TextBlock x:Name="txtStartBtnTitle" Text="Start]" Margin="40,10,0,0"/>
+                    <TextBlock x:Name="txtStartBtn" Text="{Binding txtStartBtn}" Margin="10,10,0,0"/>
+                    <TextBlock x:Name="txtSelectBtnTitle" Text="Select]" Margin="40,10,0,0"/>
+                    <TextBlock x:Name="txtSelectBtn" Text="{Binding txtSelectBtn}" Margin="10,10,0,0"/>
                 </StackPanel>
             </StackPanel>
 

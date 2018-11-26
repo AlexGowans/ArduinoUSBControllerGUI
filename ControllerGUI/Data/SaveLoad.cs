@@ -30,6 +30,8 @@ namespace ControllerGUI {
                 data.yBtn = (ushort)localSettings.Values["yBtn"];
                 data.lBtn = (ushort)localSettings.Values["lBtn"];
                 data.rBtn = (ushort)localSettings.Values["rBtn"];
+                data.startBtn = (ushort)localSettings.Values["startBtn"];
+                data.selectBtn = (ushort)localSettings.Values["selectBtn"];
             }
 
             return data;
@@ -51,6 +53,8 @@ namespace ControllerGUI {
             localSettings.Values["yBtn"] = data.yBtn;
             localSettings.Values["lBtn"] = data.lBtn;
             localSettings.Values["rBtn"] = data.rBtn;
+            localSettings.Values["startBtn"] = data.startBtn;
+            localSettings.Values["selectBtn"] = data.selectBtn;
         }
 
     }

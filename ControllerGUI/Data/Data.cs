@@ -22,9 +22,11 @@ namespace ControllerGUI {
         public ushort yBtn { get; set; }
         public ushort lBtn { get; set; }
         public ushort rBtn { get; set; }
+        public ushort startBtn { get; set; }
+        public ushort selectBtn { get; set; }
 
-        
-        public Data(int _mode, ushort up = 0x57, ushort left = 0x41, ushort down = 0x53, ushort right = 0x44, ushort a = 0x55, ushort b = 0x49, ushort x =  0x4F, ushort y = 0x4A, ushort l = 0x4B, ushort r = 0x4C) {
+
+        public Data(int _mode, ushort up = 0x57, ushort left = 0x41, ushort down = 0x53, ushort right = 0x44, ushort a = 0x55, ushort b = 0x49, ushort x =  0x4F, ushort y = 0x4A, ushort l = 0x4B, ushort r = 0x4C, ushort strt = 0x5A, ushort slct = 0x58) {
             mode = _mode;
 
             upBtn = up;
@@ -38,7 +40,8 @@ namespace ControllerGUI {
             yBtn = y;
             lBtn = l;
             rBtn = r;
-
+            startBtn = strt;
+            selectBtn = slct;
         }
 
 

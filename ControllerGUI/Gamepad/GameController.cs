@@ -27,7 +27,9 @@ namespace ControllerGUI {
         private bool xPressed = false;
         private bool yPressed = false;
         private bool lPressed = false;
-        private bool rPressed = false;       
+        private bool rPressed = false;
+        private bool startPressed = false;
+        private bool selectPressed = false;
 
 
         #region Saved Data] Keybinds and Settings
@@ -45,7 +47,9 @@ namespace ControllerGUI {
         private ushort xBtn;
         private ushort yBtn;
         private ushort lBtn;
-        private ushort rBtn;       
+        private ushort rBtn;
+        private ushort startBtn;
+        private ushort selectBtn;
         #endregion
 
         //CONSTRUCTOR] Load values or save if none
@@ -72,6 +76,8 @@ namespace ControllerGUI {
             yBtn = data.yBtn;
             lBtn = data.lBtn;
             rBtn = data.rBtn;
+            startBtn = data.startBtn;
+            selectBtn = data.selectBtn;
         }
 
 
@@ -87,6 +93,8 @@ namespace ControllerGUI {
         public ushort YKey { get { return yBtn; } }
         public ushort LKey { get { return lBtn; } }
         public ushort RKey { get { return rBtn; } }
+        public ushort StartKey { get { return startBtn; } }
+        public ushort SelectKey { get { return selectBtn; } }
         #endregion
 
         #region Press Event (called on packet receive) KEYBOARD MODE
@@ -362,6 +370,52 @@ namespace ControllerGUI {
                     info.KeyOptions = InjectedInputKeyOptions.KeyUp;
                     inputInjector.InjectKeyboardInput(new[] { info });
                 }                
+            }
+        }
+        //Start
+        public void StartPress() {
+            if (!startPressed) {
+                startPressed = true;
+                //On tap code
+            }
+            if (mode == 0) {
+                var info = new InjectedInputKeyboardInfo();
+                info.VirtualKey = StartKey;
+                inputInjector.InjectKeyboardInput(new[] { info });
+            }
+        }
+        public void StartRelease() {
+            if (startPressed) {
+                startPressed = false;
+                if (mode == 0) {
+                    var info = new InjectedInputKeyboardInfo();
+                    info.VirtualKey = StartKey;
+                    info.KeyOptions = InjectedInputKeyOptions.KeyUp;
+                    inputInjector.InjectKeyboardInput(new[] { info });
+                }
+            }
+        }
+        //Select
+        public void SelectPress() {
+            if (!selectPressed) {
+                selectPressed = true;
+                //On tap code
+            }
+            if (mode == 0) {
+                var info = new InjectedInputKeyboardInfo();
+                info.VirtualKey = SelectKey;
+                inputInjector.InjectKeyboardInput(new[] { info });
+            }
+        }
+        public void SelectRelease() {
+            if (selectPressed) {
+                selectPressed = false;
+                if (mode == 0) {
+                    var info = new InjectedInputKeyboardInfo();
+                    info.VirtualKey = SelectKey;
+                    info.KeyOptions = InjectedInputKeyOptions.KeyUp;
+                    inputInjector.InjectKeyboardInput(new[] { info });
+                }
             }
         }
         #endregion

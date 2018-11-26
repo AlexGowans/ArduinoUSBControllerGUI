@@ -39,6 +39,8 @@ namespace ControllerGUI {
         private UInt16 yBtn;
         private UInt16 lBtn;
         private UInt16 rBtn;
+        private UInt16 startBtn;
+        private UInt16 selectBtn;
 
         private Int32 recChkSum;
 
@@ -183,6 +185,22 @@ namespace ControllerGUI {
                 OnPropertyChanged("txtRBtn");
             }
         }
+        private string _txtStartBtn;
+        public string txtStartBtn {
+            get { return _txtStartBtn; }
+            set {
+                _txtStartBtn = value;
+                OnPropertyChanged("txtStartBtn");
+            }
+        }
+        private string _txtSelectBtn;
+        public string txtSelectBtn {
+            get { return _txtSelectBtn; }
+            set {
+                _txtSelectBtn = value;
+                OnPropertyChanged("txtSelectBtn");
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyName) {
@@ -286,15 +304,15 @@ namespace ControllerGUI {
                 if (received[0] == '#') {    //checking the packet follows protocol    ###
                     if (received.Length > 3) {      //Is it a complete packet
                         if (received[2] == '#') {        //Is it still following protocol?
-                            if (received.Length > 21) {     //Full length?
+                            if (received.Length > 22) {     //Full length?
 
                                 #region Calculate the Check Sum and prepare to compare
-                                for (int i = 3; i < 17; i++) {
+                                for (int i = 3; i < 18; i++) {
                                     calChkSum += (byte)received[i];
                                 }
                                 txtCalChkSum = Convert.ToString(calChkSum);
 
-                                recChkSum = Convert.ToInt32(received.Substring(17, 3));
+                                recChkSum = Convert.ToInt32(received.Substring(18, 3));
                                 calChkSum %= 1000;
                                 #endregion
 
@@ -304,8 +322,8 @@ namespace ControllerGUI {
                                     txtReceived = received + txtReceived;
                                     //###,packetId,BinaryInputs                               
                                     txtPacketNum = received.Substring(3, 3);   // 3 is where packet num start and it is 3 long] 0,1,2 are ###
-                                    txtBinOut = received.Substring(6, 11);     //11 bit binary inputs
-                                    txtChkSum = received.Substring(17, 3);     //Check Sum
+                                    txtBinOut = received.Substring(6, 12);     //11 bit binary inputs
+                                    txtChkSum = received.Substring(18, 3);     //Check Sum
                                     #endregion
 
 
@@ -321,6 +339,8 @@ namespace ControllerGUI {
                                     yBtn = Convert.ToUInt16(received.Substring(13, 1));
                                     lBtn = Convert.ToUInt16(received.Substring(14, 1));
                                     rBtn = Convert.ToUInt16(received.Substring(15, 1));
+                                    startBtn = Convert.ToUInt16(received.Substring(16, 1));
+                                    selectBtn = Convert.ToUInt16(received.Substring(17, 1));
                                     //theres one more not used yet
                                     #endregion
 
@@ -335,6 +355,8 @@ namespace ControllerGUI {
                                     txtYBtn = Convert.ToString(yBtn);
                                     txtLBtn = Convert.ToString(lBtn);
                                     txtRBtn = Convert.ToString(rBtn);
+                                    txtStartBtn = Convert.ToString(startBtn);
+                                    txtSelectBtn = Convert.ToString(selectBtn);
                                     #endregion
 
                                     #region Activate Keys
@@ -358,7 +380,11 @@ namespace ControllerGUI {
                                     if (lBtn == 1) gameController.LPress();
                                     else gameController.LRelease(); //simulate release 
                                     if (rBtn == 1) gameController.RPress();
-                                    else gameController.RRelease(); //simulate release 
+                                    else gameController.RRelease(); //simulate release
+                                    if (startBtn == 1) gameController.StartPress();
+                                    else gameController.StartRelease(); //simulate release
+                                    if (selectBtn == 1) gameController.SelectPress();
+                                    else gameController.SelectRelease(); //simulate release 
                                     #endregion
                                 }
                                 #endregion

@@ -114,5 +114,9 @@ namespace ControllerGUI {
             }
         }
         #endregion
+
+        private void btnChangeBindings_Click(object sender, RoutedEventArgs e) {
+            this.Frame.Navigate(typeof(ChangeKeyBindings));
+        }
     }
 }

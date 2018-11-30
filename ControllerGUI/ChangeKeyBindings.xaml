@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="ControllerGUI.ChangeBindings"
+    x:Class="ControllerGUI.ChangeKeyBindings"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ControllerGUI"
@@ -9,33 +9,73 @@
     Background="Black" FocusVisualPrimaryBrush="White" Foreground="White">
 
     <Grid RowSpacing="1" ColumnSpacing="1">
-        <TextBlock Text="Up]" Margin="200,100,0,0"/>
-        <TextBlock Text="Left]" Margin="100,200,0,0"/>
-        <TextBlock Text="Down]" Margin="200,300,0,0"/>
-        <TextBlock Text="Right]" Margin="300,200,0,0"/>
 
-        <TextBlock Text="X]" Margin="700,100,0,0"/>
-        <TextBlock Text="Y]" Margin="600,200,0,0"/>
-        <TextBlock Text="B]" Margin="700,300,0,0"/>
-        <TextBlock Text="A]" Margin="800,200,0,0"/>
+        <StackPanel Orientation="Vertical">
+            <Grid>
+                <StackPanel Orientation="Vertical" Margin="200,100,0,0">
+                    <TextBlock Text="Up]"/>
+                    <TextBox x:Name="upBox" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="100,200,0,0">
+                    <TextBlock Text="Left]"/>
+                    <TextBox x:Name="leftBox" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="200,300,0,0">
+                    <TextBlock Text="Down]"/>
+                    <TextBox x:Name="downBox" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="300,200,0,0">
+                    <TextBlock Text="Right]"/>
+                    <TextBox x:Name="rightBox" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0"/>
+                </StackPanel>
 
-        <TextBlock Text="L]" Margin="400,50,0,0"/>
-        <TextBlock Text="R]" Margin="500,50,0,0"/>
+                <StackPanel Orientation="Vertical" Margin="700,100,0,0">
+                    <TextBlock Text="X]"/>
+                    <TextBox x:Name="xBox" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="600,200,0,0">
+                    <TextBlock Text="Y]"/>
+                    <TextBox x:Name="yBox" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="700,300,0,0">
+                    <TextBlock Text="B]"/>
+                    <TextBox x:Name="bBox" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="800,200,0,0">
+                    <TextBlock Text="A]"/>
+                    <TextBox x:Name="aBox" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0"/>
+                </StackPanel>
 
-        <TextBlock Text="Start]" Margin="400,300,0,0"/>
-        <TextBlock Text="Select]" Margin="500,300,0,0"/>
+                <StackPanel Orientation="Vertical" Margin="400,100,0,0">
+                    <TextBlock Text="L]"/>
+                    <TextBox x:Name="lBox" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="500,100,0,0">
+                    <TextBlock Text="R]"/>
+                    <TextBox x:Name="rBox" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0"/>
+                </StackPanel>
 
+                <StackPanel Orientation="Vertical" Margin="400,300,0,0">
+                    <TextBlock Text="Start]"/>
+                    <TextBox x:Name="starttBox" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="500,300,0,0">
+                    <TextBlock Text="Select]"/>
+                    <TextBox x:Name="selectBox" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0"/>
+                </StackPanel>
+            </Grid>
 
-        <StackPanel Orientation="Horizontal" Margin="360,-100,0,0">
-            <Button x:Name="btnSave" Content="Save" Style="{StaticResource MyButtonStyle}"
-                  Margin="0,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858" HorizontalAlignment="Right"
-                  Height="50" Width="60"/>
-            <Button x:Name="btnApply" Content="Exit" Style="{StaticResource MyButtonStyle}"
-                  Margin="20,0,0,0" Click="btnApply_Click" Foreground="White" Background="#FF5D5858" HorizontalAlignment="Right"
-                  Height="50" Width="60"/>
-            <Button x:Name="btnExit" Content="Exit" Style="{StaticResource MyButtonStyle}"
-                  Margin="20,0,0,0" Click="btnExit_Click" Foreground="White" Background="#FF5D5858" HorizontalAlignment="Right"
-                  Height="50" Width="60"/>
+            <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+                <Button x:Name="btnSave" Content="Save" Style="{StaticResource MyButtonStyle}"
+                    Margin="360,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858"
+                      Height="50" Width="60"/>
+                <Button x:Name="btnApply" Content="Apply" Style="{StaticResource MyButtonStyle}"
+                      Margin="20,0,0,0" Click="btnApply_Click" Foreground="White" Background="#FF5D5858"
+                      Height="50" Width="60"/>
+                <Button x:Name="btnExit" Content="Exit" Style="{StaticResource MyButtonStyle}"
+                      Margin="20,0,0,0" Click="btnExit_Click" Foreground="White" Background="#FF5D5858"
+                      Height="50" Width="60"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

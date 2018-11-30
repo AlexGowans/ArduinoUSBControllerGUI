@@ -9,138 +9,145 @@
 
 
 
-    <Grid>
-        <StackPanel Orientation="Vertical" Margin="0,0,0,0" Grid.Row="1">
+  <Grid>
+    <StackPanel Orientation="Vertical" Margin="0,0,0,0" Grid.Row="1">
 
-            <!--DEVICE CONNECTION DROPDOWN-->
-            <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="Device Connection" Width="150" TextAlignment="Right"/>
-                    <Button x:Name="btnDCDropdown" Content="v" Style="{StaticResource MyButtonStyle}"
-                            Margin="0,0,0,0" Click="btnDCDropdown_Click" Foreground="White" Background="#FF5D5858" HorizontalAlignment="Right"
-                            Height="30" Width="30"/>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Margin="10,20,0,0" x:Name="spDC">
-                    <TextBlock Text="Select your Controller:"/>
-                    <ListBox x:Name="lstSerialDevices" Height="100" Width="300" HorizontalAlignment="Left" Background="#FF616060">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Id}"/>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                    <StackPanel Orientation="Horizontal" Margin="-10,0,0,0">
-                        <Button x:Name="btnConnectToDevice" Content="Connect" Style="{StaticResource MyButtonStyle}"
-                            Margin="10,10,0,0" Click="btnConnectToDevice_Click" Foreground="White" Background="#FF5D5858"
-                            Height="50" Width="70"/>
-                        <TextBlock x:Name="txtMessage" Text="{Binding txtMessage}" Margin="10,22,0,0"/>
-                    </StackPanel>
-                </StackPanel>
+      <!--DEVICE CONNECTION DROPDOWN-->
+      <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+        <StackPanel Orientation="Vertical">
+          <TextBlock Text="Device Connection" Width="150" TextAlignment="Right"/>
+          <Button x:Name="btnDCDropdown" Content="v" Style="{StaticResource MyButtonStyle}"
+                  Margin="0,0,0,0" Click="btnDCDropdown_Click" Foreground="White" Background="#FF5D5858" HorizontalAlignment="Right"
+                  Height="30" Width="30"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="10,20,0,0" x:Name="spDC">
+          <TextBlock Text="Select your Controller:"/>
+          <ListBox x:Name="lstSerialDevices" Height="100" Width="300" HorizontalAlignment="Left" Background="#FF616060">
+            <ListBox.ItemTemplate>
+              <DataTemplate>
+                <TextBlock Text="{Binding Id}"/>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+          <StackPanel Orientation="Horizontal" Margin="-10,0,0,0">
+            <Button x:Name="btnRefreshList" Style="{StaticResource MyButtonStyle}"
+                Margin="10,10,0,0" Click="btnRefreshList_Click" Foreground="White" Background="#FF5D5858"
+                Height="50" Width="50">
+              <StackPanel>
+                <SymbolIcon Symbol ="Refresh"/>
+              </StackPanel>
+            </Button>
+            <Button x:Name="btnConnectToDevice" Content="Connect" Style="{StaticResource MyButtonStyle}"
+                Margin="10,10,0,0" Click="btnConnectToDevice_Click" Foreground="White" Background="#FF5D5858"
+                Height="50" Width="70"/>
+            <TextBlock x:Name="txtMessage" Text="{Binding txtMessage}" Margin="10,22,0,0"/>
+          </StackPanel>
+        </StackPanel>
+      </StackPanel>
+
+      <!--GAMEPAD VIEW DROPDOWN-->
+      <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+        <StackPanel Orientation="Vertical">
+          <TextBlock Text="Gamepad View" Width="150" TextAlignment="Right"/>
+          <Button x:Name="btnGVDropdown" Content="v" Style="{StaticResource MyButtonStyle}"
+                  Margin="0,0,0,0" Click="btnGVDropdown_Click" Foreground="White" Background="#FF5D5858" HorizontalAlignment="Right"
+                  Height="30" Width="30"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,10,0,0" x:Name="spGV">
+          <TextBlock x:Name="txtUpBtnTitle" Text="Up]" Margin="40,10,0,0"/>
+          <TextBlock x:Name="txtUpBtn" Text="{Binding txtUpBtn}" Margin="10,10,0,0"/>
+          <TextBlock x:Name="txtLeftBtnTitle" Text="Left]" Margin="40,10,0,0"/>
+          <TextBlock x:Name="txtLeftBtn" Text="{Binding txtLeftBtn}" Margin="10,10,0,0"/>
+          <TextBlock x:Name="txtDownBtnTitle" Text="Down]" Margin="40,10,0,0"/>
+          <TextBlock x:Name="txtDownBtn" Text="{Binding txtDownBtn}" Margin="10,10,0,0"/>
+          <TextBlock x:Name="txtRightBtnTitle" Text="Right]" Margin="40,10,0,0"/>
+          <TextBlock x:Name="txtRightBtn" Text="{Binding txtRightBtn}" Margin="10,10,0,0"/>
+          <TextBlock x:Name="txtABtnTitle" Text="A]" Margin="40,10,0,0"/>
+          <TextBlock x:Name="txtABtn" Text="{Binding txtABtn}" Margin="10,10,0,0"/>
+          <TextBlock x:Name="txtBBtnTitle" Text="B]" Margin="40,10,0,0"/>
+          <TextBlock x:Name="txtBBtn" Text="{Binding txtBBtn}" Margin="10,10,0,0"/>
+          <TextBlock x:Name="txtXBtnTitle" Text="X]" Margin="40,10,0,0"/>
+          <TextBlock x:Name="txtXBtn" Text="{Binding txtXBtn}" Margin="10,10,0,0"/>
+          <TextBlock x:Name="txtYBtnTitle" Text="Y]" Margin="40,10,0,0"/>
+          <TextBlock x:Name="txtYBtn" Text="{Binding txtYBtn}" Margin="10,10,0,0"/>
+          <TextBlock x:Name="txtLBtnTitle" Text="L]" Margin="40,10,0,0"/>
+          <TextBlock x:Name="txtLBtn" Text="{Binding txtLBtn}" Margin="10,10,0,0"/>
+          <TextBlock x:Name="txtRBtnTitle" Text="R]" Margin="40,10,0,0"/>
+          <TextBlock x:Name="txtRBtn" Text="{Binding txtRBtn}" Margin="10,10,0,0"/>
+          <TextBlock x:Name="txtStartBtnTitle" Text="Start]" Margin="40,10,0,0"/>
+          <TextBlock x:Name="txtStartBtn" Text="{Binding txtStartBtn}" Margin="10,10,0,0"/>
+          <TextBlock x:Name="txtSelectBtnTitle" Text="Select]" Margin="40,10,0,0"/>
+          <TextBlock x:Name="txtSelectBtn" Text="{Binding txtSelectBtn}" Margin="10,10,0,0"/>
+        </StackPanel>
+      </StackPanel>
+
+      <!--DEBUG VIEW DROPDOWN-->
+      <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+        <StackPanel Orientation="Vertical">
+          <TextBlock Text="Debug View" Width="150" TextAlignment="Right"/>
+          <Button x:Name="btnDVDropdown" Content=">" Style="{StaticResource MyButtonStyle}"
+                  Margin="0,0,0,0" Click="btnDVDropdown_Click" Foreground="White" Background="#FF5D5858" HorizontalAlignment="Right"
+                  Height="30" Width="30"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" x:Name="spDV" Visibility="Collapsed">
+          <StackPanel Orientation="Horizontal" Margin="10,20,0,0">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Height="150" Width="300" HorizontalAlignment="Left" Foreground="White" Background="#FF5D5858">
+              <TextBlock x:Name="txtReceived" Margin="0,0,0,0"
+                     Text="{Binding txtReceived}"/>
+            </ScrollViewer>
+            <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+              <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="txtPacketNumTitle" Text="Packet Number:" Margin="0,0,0,0" Width="110" TextAlignment="Right"/>
+                <TextBlock x:Name="txtPacketNum" Text="{Binding txtPacketNum}" Margin="10,0,0,0"/>
+              </StackPanel>
+              <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="txtBinOutTitle" Text="Binary:" Margin="0,10,0,0" Width="110" TextAlignment="Right"/>
+                <TextBlock x:Name="txtBinOut" Text="{Binding txtBinOut}" Margin="10,10,0,0"/>
+              </StackPanel>
+              <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="txtChkSumTitle" Text="Check Sum:" Margin="0,10,0,0" Width="110" TextAlignment="Right"/>
+                <TextBlock x:Name="txtChkSum" Text="{Binding txtChkSum}" Margin="10,10,0,0"/>
+              </StackPanel>
+              <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="txtCalChkSumTitle" Text="Calc Check Sum:" Margin="0,10,0,0" Width="110" TextAlignment="Right"/>
+                <TextBlock x:Name="txtCalChkSum" Text="{Binding txtCalChkSum}" Margin="10,10,0,0"/>
+              </StackPanel>
             </StackPanel>
+          </StackPanel>
+          <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+            <TextBlock Text="Error:"/>
+            <TextBlock x:Name="txtErrorMsg" Text="{Binding txtErrorMsg}" Margin="10,0,0,0"/>
+          </StackPanel>
+        </StackPanel>
+      </StackPanel>
 
-            <!--GAMEPAD VIEW DROPDOWN-->
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="Gamepad View" Width="150" TextAlignment="Right"/>
-                    <Button x:Name="btnGVDropdown" Content="v" Style="{StaticResource MyButtonStyle}"
-                            Margin="0,0,0,0" Click="btnGVDropdown_Click" Foreground="White" Background="#FF5D5858" HorizontalAlignment="Right"
-                            Height="30" Width="30"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="10,10,0,0" x:Name="spGV">
-                    <TextBlock x:Name="txtUpBtnTitle" Text="Up]" Margin="40,10,0,0"/>
-                    <TextBlock x:Name="txtUpBtn" Text="{Binding txtUpBtn}" Margin="10,10,0,0"/>
-                    <TextBlock x:Name="txtLeftBtnTitle" Text="Left]" Margin="40,10,0,0"/>
-                    <TextBlock x:Name="txtLeftBtn" Text="{Binding txtLeftBtn}" Margin="10,10,0,0"/>
-                    <TextBlock x:Name="txtDownBtnTitle" Text="Down]" Margin="40,10,0,0"/>
-                    <TextBlock x:Name="txtDownBtn" Text="{Binding txtDownBtn}" Margin="10,10,0,0"/>
-                    <TextBlock x:Name="txtRightBtnTitle" Text="Right]" Margin="40,10,0,0"/>
-                    <TextBlock x:Name="txtRightBtn" Text="{Binding txtRightBtn}" Margin="10,10,0,0"/>
-                    <TextBlock x:Name="txtABtnTitle" Text="A]" Margin="40,10,0,0"/>
-                    <TextBlock x:Name="txtABtn" Text="{Binding txtABtn}" Margin="10,10,0,0"/>
-                    <TextBlock x:Name="txtBBtnTitle" Text="B]" Margin="40,10,0,0"/>
-                    <TextBlock x:Name="txtBBtn" Text="{Binding txtBBtn}" Margin="10,10,0,0"/>
-                    <TextBlock x:Name="txtXBtnTitle" Text="X]" Margin="40,10,0,0"/>
-                    <TextBlock x:Name="txtXBtn" Text="{Binding txtXBtn}" Margin="10,10,0,0"/>
-                    <TextBlock x:Name="txtYBtnTitle" Text="Y]" Margin="40,10,0,0"/>
-                    <TextBlock x:Name="txtYBtn" Text="{Binding txtYBtn}" Margin="10,10,0,0"/>
-                    <TextBlock x:Name="txtLBtnTitle" Text="L]" Margin="40,10,0,0"/>
-                    <TextBlock x:Name="txtLBtn" Text="{Binding txtLBtn}" Margin="10,10,0,0"/>
-                    <TextBlock x:Name="txtRBtnTitle" Text="R]" Margin="40,10,0,0"/>
-                    <TextBlock x:Name="txtRBtn" Text="{Binding txtRBtn}" Margin="10,10,0,0"/>
-                    <TextBlock x:Name="txtStartBtnTitle" Text="Start]" Margin="40,10,0,0"/>
-                    <TextBlock x:Name="txtStartBtn" Text="{Binding txtStartBtn}" Margin="10,10,0,0"/>
-                    <TextBlock x:Name="txtSelectBtnTitle" Text="Select]" Margin="40,10,0,0"/>
-                    <TextBlock x:Name="txtSelectBtn" Text="{Binding txtSelectBtn}" Margin="10,10,0,0"/>
-                </StackPanel>
-            </StackPanel>
-
-            <!--DEBUG VIEW DROPDOWN-->
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="Debug View" Width="150" TextAlignment="Right"/>
-                    <Button x:Name="btnDVDropdown" Content=">" Style="{StaticResource MyButtonStyle}"
-                            Margin="0,0,0,0" Click="btnDVDropdown_Click" Foreground="White" Background="#FF5D5858" HorizontalAlignment="Right"
-                            Height="30" Width="30"/>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" x:Name="spDV" Visibility="Collapsed">
-                    <StackPanel Orientation="Horizontal" Margin="10,20,0,0">
-                        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="150" Width="300" HorizontalAlignment="Left" Foreground="White" Background="#FF5D5858">
-                            <TextBlock x:Name="txtReceived" Margin="0,0,0,0"
-                                   Text="Data Received"/>
-                        </ScrollViewer>
-                        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock x:Name="txtPacketNumTitle" Text="Packet Number:" Margin="0,0,0,0" Width="110" TextAlignment="Right"/>
-                                <TextBlock x:Name="txtPacketNum" Text="{Binding txtPacketNum}" Margin="10,0,0,0"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock x:Name="txtBinOutTitle" Text="Binary:" Margin="0,10,0,0" Width="110" TextAlignment="Right"/>
-                                <TextBlock x:Name="txtBinOut" Text="{Binding txtBinOut}" Margin="10,10,0,0"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock x:Name="txtChkSumTitle" Text="Check Sum:" Margin="0,10,0,0" Width="110" TextAlignment="Right"/>
-                                <TextBlock x:Name="txtChkSum" Text="{Binding txtChkSum}" Margin="10,10,0,0"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock x:Name="txtCalChkSumTitle" Text="Calc Check Sum:" Margin="0,10,0,0" Width="110" TextAlignment="Right"/>
-                                <TextBlock x:Name="txtCalChkSum" Text="{Binding txtCalChkSum}" Margin="10,10,0,0"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
-                        <TextBlock Text="Error:"/>
-                        <TextBlock x:Name="txtErrorMsg" Text="{Binding txtErrorMsg}" Margin="10,0,0,0"/>
-                    </StackPanel>
-                </StackPanel>
-            </StackPanel>
-
-            <!--SETTINGS DROPDOWN-->
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="Settings" Width="150" TextAlignment="Right"/>
-                    <Button x:Name="btnSDropdown" Content="v" Style="{StaticResource MyButtonStyle}"
-                            Margin="0,0,0,0" Click="btnSDropdown_Click" Foreground="White" Background="#FF5D5858" HorizontalAlignment="Right"
-                            Height="30" Width="30"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" x:Name="spS">
-
-                </StackPanel>
-            </StackPanel>
-
-
-
-
-                <TextBox x:Name="txtSend" Margin="10,10,0,0" Width="300" HorizontalAlignment="Left"
-                Text="###010000289\r\n"/>
-            <!-- Preformated value-->
-            <Button x:Name="btnWrite" Content="Write" Style="{StaticResource MyButtonStyle}"
-                        Margin="10,10,0,0" Click="btnWrite_Click" Foreground="White" Background="#FF5D5858"
-                        Height="50" Width="55"/>
-
-
-
-            
+      <!--SETTINGS DROPDOWN-->
+      <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+        <StackPanel Orientation="Vertical">
+          <TextBlock Text="Settings" Width="150" TextAlignment="Right"/>
+          <Button x:Name="btnSDropdown" Content="v" Style="{StaticResource MyButtonStyle}"
+                  Margin="0,0,0,0" Click="btnSDropdown_Click" Foreground="White" Background="#FF5D5858" HorizontalAlignment="Right"
+                  Height="30" Width="30"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" x:Name="spS">
 
         </StackPanel>
-    </Grid>
+      </StackPanel>
+
+
+
+
+      <TextBox x:Name="txtSend" Margin="10,10,0,0" Width="300" HorizontalAlignment="Left"
+      Text="###010000289\r\n"/>
+      <!-- Preformated value-->
+      <Button x:Name="btnWrite" Content="Write" Style="{StaticResource MyButtonStyle}"
+                  Margin="10,10,0,0" Click="btnWrite_Click" Foreground="White" Background="#FF5D5858"
+                  Height="50" Width="55"/>
+
+
+
+
+
+    </StackPanel>
+  </Grid>
 </Page>

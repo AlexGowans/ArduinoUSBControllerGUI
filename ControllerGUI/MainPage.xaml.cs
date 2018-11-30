@@ -52,6 +52,10 @@ namespace ControllerGUI {
             serialController.SerialPortConfiguration(lstSerialDevices.SelectedItems);
         }
 
+        private void btnRefreshList_Click(object sender, RoutedEventArgs e) {
+            RefreshDeviceList();
+        }
+
         //Send
         private async void btnWrite_Click(object sender, RoutedEventArgs e) {
             serialController.PreparePacketSend(txtSend.Text.ToString());

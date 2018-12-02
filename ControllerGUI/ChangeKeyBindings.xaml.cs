@@ -40,5 +40,10 @@ namespace ControllerGUI
         private void btnExit_Click(object sender, RoutedEventArgs e) {
             this.Frame.Navigate(typeof(MainPage));
         }
+
+
+        private void FillFromLoad() {
+            Data data = SaveLoad.Load();
+        }
     }
 }

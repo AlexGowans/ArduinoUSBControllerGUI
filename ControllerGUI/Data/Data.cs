@@ -26,7 +26,7 @@ namespace ControllerGUI {
         public ushort selectBtn { get; set; }
 
 
-        public Data(int _mode, ushort up = 0x57, ushort left = 0x41, ushort down = 0x53, ushort right = 0x44, ushort a = 0x55, ushort b = 0x49, ushort x =  0x4F, ushort y = 0x4A, ushort l = 0x4B, ushort r = 0x4C, ushort strt = 0x5A, ushort slct = 0x58) {
+        public Data(int _mode, ushort up = 0x57, ushort left = 0x41, ushort down = 0x53, ushort right = 0x44, ushort a = 0x4C, ushort b = 0x4B, ushort x =  0x49, ushort y = 0x4A, ushort l = 0x55, ushort r = 0x52, ushort strt = 0x48, ushort slct = 0x46) {
             mode = _mode;
 
             upBtn = up;

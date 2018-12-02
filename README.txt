@@ -26,6 +26,9 @@ User selected key mappings
 
 Sources:
 
+KeyDown Checking:
+https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.onkeydown#Windows_UI_Xaml_Controls_Control_OnKeyDown_Windows_UI_Xaml_Input_KeyRoutedEventArgs_
+
 3D buttons:
 https://social.technet.microsoft.com/wiki/contents/articles/30199.make-a-styled-button-in-xaml-for-universal-windows-apps.aspx
 

@@ -35,10 +35,10 @@ namespace ControllerGUI {
             this.InitializeComponent();
 
             RefreshDeviceList();
-            DataContext = serialController;
+            DataContext = serialController;     //the serial controller has bindings for alot of our xaml
         }
 
-        private async void RefreshDeviceList() {
+        private async void RefreshDeviceList() {     //Refresh your devices
             serialController.ListAvailablePorts();   //Get a port
             lstSerialDevices.ItemsSource = serialController.listOfDevices; //Show list in XAML
             lstSerialDevices.SelectedIndex = -1;
@@ -48,7 +48,7 @@ namespace ControllerGUI {
 
         #region Buttons
         //Click to initiate
-        private async void btnConnectToDevice_Click(object sender, RoutedEventArgs e) {
+        private async void btnConnectToDevice_Click(object sender, RoutedEventArgs e) { //async to help memory
             serialController.SerialPortConfiguration(lstSerialDevices.SelectedItems);
         }
 
@@ -61,7 +61,7 @@ namespace ControllerGUI {
             serialController.PreparePacketSend(txtSend.Text.ToString());
         }
         
-
+        //Open/Close dropdown menus
         private void btnDCDropdown_Click(object sender, RoutedEventArgs e) {
             if (spDC.Visibility == Visibility.Collapsed)
             {
@@ -74,7 +74,6 @@ namespace ControllerGUI {
                 btnDCDropdown.Content = ">";
             }
         }
-
         private void btnGVDropdown_Click(object sender, RoutedEventArgs e) {
             if (spGV.Visibility == Visibility.Collapsed)
             {
@@ -87,7 +86,6 @@ namespace ControllerGUI {
                 btnGVDropdown.Content = ">";
             }
         }
-
         private void btnDVDropdown_Click(object sender, RoutedEventArgs e)
         {
             if(spDV.Visibility == Visibility.Collapsed) {
@@ -99,8 +97,7 @@ namespace ControllerGUI {
                 spDV.Visibility = Visibility.Collapsed;
                 btnDVDropdown.Content = ">";
             }
-        }
-        
+        }       
         private void btnSDropdown_Click(object sender, RoutedEventArgs e) {
             if (spS.Visibility == Visibility.Collapsed)
             {
@@ -113,11 +110,14 @@ namespace ControllerGUI {
                 btnSDropdown.Content = ">";
             }
         }
-        #endregion
-
+        
+        //Go to bindings page
         private void btnChangeBindings_Click(object sender, RoutedEventArgs e) {
-            serialController.Disconnect();
+            //if(serialController != null) {
+            //    serialController.Disconnect();
+            //}
             this.Frame.Navigate(typeof(ChangeKeyBindings));
         }
+        #endregion
     }
 }

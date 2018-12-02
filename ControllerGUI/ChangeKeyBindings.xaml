@@ -11,80 +11,80 @@
     <Grid RowSpacing="1" ColumnSpacing="1">
 
         <StackPanel Orientation="Vertical">
-            <Grid>
+            <Grid KeyDown="OnKeyDown">
                 <StackPanel Orientation="Vertical" Margin="200,100,0,0">
                     <TextBlock Text="Up]"/>
                     <Button x:Name="upBox" Content="" Style="{StaticResource MyButtonStyle}"
-                    Margin="-15,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858"
+                    Margin="-15,0,0,0" Click="bindingBox_Click" Foreground="White" Background="#FF5D5858"
                       Height="50" Width="60"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="100,200,0,0">
                     <TextBlock Text="Left]"/>
                     <Button x:Name="leftBox" Content="" Style="{StaticResource MyButtonStyle}"
-                        Margin="-15,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858"
+                        Margin="-15,0,0,0" Click="bindingBox_Click" Foreground="White" Background="#FF5D5858"
                         Height="50" Width="60"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="200,300,0,0">
                     <TextBlock Text="Down]"/>
                     <Button x:Name="downBox" Content="" Style="{StaticResource MyButtonStyle}"
-                        Margin="-15,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858"
+                        Margin="-15,0,0,0" Click="bindingBox_Click" Foreground="White" Background="#FF5D5858"
                         Height="50" Width="60"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="300,200,0,0">
                     <TextBlock Text="Right]"/>
                     <Button x:Name="rightBox" Content="" Style="{StaticResource MyButtonStyle}"
-                        Margin="-15,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858"
+                        Margin="-15,0,0,0" Click="bindingBox_Click" Foreground="White" Background="#FF5D5858"
                         Height="50" Width="60"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Margin="700,100,0,0">
                     <TextBlock Text="X]"/>
                     <Button x:Name="xBox" Content="" Style="{StaticResource MyButtonStyle}"
-                        Margin="-15,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858"
+                        Margin="-15,0,0,0" Click="bindingBox_Click" Foreground="White" Background="#FF5D5858"
                         Height="50" Width="60"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="600,200,0,0">
                     <TextBlock Text="Y]"/>
                     <Button x:Name="yBox" Content="" Style="{StaticResource MyButtonStyle}"
-                        Margin="-15,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858"
+                        Margin="-15,0,0,0" Click="bindingBox_Click" Foreground="White" Background="#FF5D5858"
                         Height="50" Width="60"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="700,300,0,0">
                     <TextBlock Text="B]"/>
                     <Button x:Name="bBox" Content="" Style="{StaticResource MyButtonStyle}"
-                        Margin="-15,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858"
+                        Margin="-15,0,0,0" Click="bindingBox_Click" Foreground="White" Background="#FF5D5858"
                         Height="50" Width="60"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="800,200,0,0">
                     <TextBlock Text="A]"/>
                     <Button x:Name="aBox" Content="" Style="{StaticResource MyButtonStyle}"
-                        Margin="-15,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858"
+                        Margin="-15,0,0,0" Click="bindingBox_Click" Foreground="White" Background="#FF5D5858"
                         Height="50" Width="60"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Margin="400,100,0,0">
                     <TextBlock Text="L]"/>
                     <Button x:Name="lBox" Content="" Style="{StaticResource MyButtonStyle}"
-                        Margin="-15,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858"
+                        Margin="-15,0,0,0" Click="bindingBox_Click" Foreground="White" Background="#FF5D5858"
                         Height="50" Width="60"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="500,100,0,0">
                     <TextBlock Text="R]"/>
                     <Button x:Name="rBox" Content="" Style="{StaticResource MyButtonStyle}"
-                        Margin="-15,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858"
+                        Margin="-15,0,0,0" Click="bindingBox_Click" Foreground="White" Background="#FF5D5858"
                         Height="50" Width="60"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Margin="500,300,0,0">
                     <TextBlock Text="Start]"/>
-                    <Button x:Name="starttBox" Content="" Style="{StaticResource MyButtonStyle}"
-                        Margin="-15,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858"
+                    <Button x:Name="startBox" Content="" Style="{StaticResource MyButtonStyle}"
+                        Margin="-15,0,0,0" Click="bindingBox_Click" Foreground="White" Background="#FF5D5858"
                         Height="50" Width="60"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="400,300,0,0">
                     <TextBlock Text="Select]"/>
                     <Button x:Name="selectBox" Content="" Style="{StaticResource MyButtonStyle}"
-                        Margin="-15,0,0,0" Click="btnSave_Click" Foreground="White" Background="#FF5D5858"
+                        Margin="-15,0,0,0" Click="bindingBox_Click" Foreground="White" Background="#FF5D5858"
                         Height="50" Width="60"/>
                 </StackPanel>
             </Grid>

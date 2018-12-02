@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -83,7 +84,9 @@ namespace ControllerGUI
         }
 
         private void bindingBox_Click(object sender, RoutedEventArgs e) {
+            selectedBinding.Background = new SolidColorBrush(Color.FromArgb(255, 93, 88, 88));  //#FF5D5858  //clear previous highlight  
             selectedBinding = (Button)sender;   //I know it's a button calling this
+            selectedBinding.Background = new SolidColorBrush(Colors.Red);   //Show pressed
         }
 
 
@@ -92,7 +95,9 @@ namespace ControllerGUI
         //Global keydown check from the grid itself
         private void OnKeyDown(object sender, KeyRoutedEventArgs e) {
             selectedBinding.Content = (char)e.Key;  // set the selected binding to the pressed key
-            selectedBinding = new Button(); //clear the selected
+            selectedBinding.Background = new SolidColorBrush(Color.FromArgb(255, 93, 88, 88));  //#FF5D5858  //Reset background
+            selectedBinding = new Button(); //clear the selected            
+            
         }
 
         

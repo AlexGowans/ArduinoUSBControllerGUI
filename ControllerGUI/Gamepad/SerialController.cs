@@ -437,5 +437,9 @@ namespace ControllerGUI {
             }
         }
         #endregion
+
+        public async void Disconnect() {
+            serialPort.Dispose();
+        }
     }
 }

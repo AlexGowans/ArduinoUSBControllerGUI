@@ -116,6 +116,7 @@ namespace ControllerGUI {
         #endregion
 
         private void btnChangeBindings_Click(object sender, RoutedEventArgs e) {
+            serialController.Disconnect();
             this.Frame.Navigate(typeof(ChangeKeyBindings));
         }
     }

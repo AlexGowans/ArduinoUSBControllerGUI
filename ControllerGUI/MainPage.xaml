@@ -55,30 +55,59 @@
                   Height="30" Width="30"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="10,10,0,0" x:Name="spGV">
-          <TextBlock x:Name="txtUpBtnTitle" Text="Up]" Margin="40,10,0,0"/>
-          <TextBlock x:Name="txtUpBtn" Text="{Binding txtUpBtn}" Margin="10,10,0,0"/>
-          <TextBlock x:Name="txtLeftBtnTitle" Text="Left]" Margin="40,10,0,0"/>
-          <TextBlock x:Name="txtLeftBtn" Text="{Binding txtLeftBtn}" Margin="10,10,0,0"/>
-          <TextBlock x:Name="txtDownBtnTitle" Text="Down]" Margin="40,10,0,0"/>
-          <TextBlock x:Name="txtDownBtn" Text="{Binding txtDownBtn}" Margin="10,10,0,0"/>
-          <TextBlock x:Name="txtRightBtnTitle" Text="Right]" Margin="40,10,0,0"/>
-          <TextBlock x:Name="txtRightBtn" Text="{Binding txtRightBtn}" Margin="10,10,0,0"/>
-          <TextBlock x:Name="txtABtnTitle" Text="A]" Margin="40,10,0,0"/>
-          <TextBlock x:Name="txtABtn" Text="{Binding txtABtn}" Margin="10,10,0,0"/>
-          <TextBlock x:Name="txtBBtnTitle" Text="B]" Margin="40,10,0,0"/>
-          <TextBlock x:Name="txtBBtn" Text="{Binding txtBBtn}" Margin="10,10,0,0"/>
-          <TextBlock x:Name="txtXBtnTitle" Text="X]" Margin="40,10,0,0"/>
-          <TextBlock x:Name="txtXBtn" Text="{Binding txtXBtn}" Margin="10,10,0,0"/>
-          <TextBlock x:Name="txtYBtnTitle" Text="Y]" Margin="40,10,0,0"/>
-          <TextBlock x:Name="txtYBtn" Text="{Binding txtYBtn}" Margin="10,10,0,0"/>
-          <TextBlock x:Name="txtLBtnTitle" Text="L]" Margin="40,10,0,0"/>
-          <TextBlock x:Name="txtLBtn" Text="{Binding txtLBtn}" Margin="10,10,0,0"/>
-          <TextBlock x:Name="txtRBtnTitle" Text="R]" Margin="40,10,0,0"/>
-          <TextBlock x:Name="txtRBtn" Text="{Binding txtRBtn}" Margin="10,10,0,0"/>
-          <TextBlock x:Name="txtStartBtnTitle" Text="Start]" Margin="40,10,0,0"/>
-          <TextBlock x:Name="txtStartBtn" Text="{Binding txtStartBtn}" Margin="10,10,0,0"/>
-          <TextBlock x:Name="txtSelectBtnTitle" Text="Select]" Margin="40,10,0,0"/>
-          <TextBlock x:Name="txtSelectBtn" Text="{Binding txtSelectBtn}" Margin="10,10,0,0"/>
+            <Grid>
+                <StackPanel Orientation="Vertical" Margin="100,10,0,0">
+                    <TextBlock x:Name="txtUpBtnTitle" Text="Up]" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="txtUpBtn" Text="{Binding txtUpBtn}" Margin="-10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0,110,0,0">
+                    <TextBlock x:Name="txtLeftBtnTitle" Text="Left]" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="txtLeftBtn" Text="{Binding txtLeftBtn}" Margin="-10,0,0,0"/>
+                </StackPanel>                
+                <StackPanel Orientation="Vertical" Margin="100,210,0,0">
+                    <TextBlock x:Name="txtDownBtnTitle" Text="Down]" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="txtDownBtn" Text="{Binding txtDownBtn}" Margin="-10,0,0,0"/>
+                </StackPanel>                
+                <StackPanel Orientation="Vertical" Margin="200,110,0,0">
+                    <TextBlock x:Name="txtRightBtnTitle" Text="Right]" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="txtRightBtn" Text="{Binding txtRightBtn}" Margin="-10,0,0,0"/>
+                </StackPanel>
+                
+                <StackPanel Orientation="Vertical" Margin="600,110,0,0">
+                    <TextBlock x:Name="txtABtnTitle" Text="A]" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="txtABtn" Text="{Binding txtABtn}" Margin="-10,10,0,0"/>
+                </StackPanel>    
+                <StackPanel Orientation="Vertical" Margin="500,210,0,0">    
+                    <TextBlock x:Name="txtBBtnTitle" Text="B]" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="txtBBtn" Text="{Binding txtBBtn}" Margin="-10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="500,10,0,0">
+                    <TextBlock x:Name="txtXBtnTitle" Text="X]" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="txtXBtn" Text="{Binding txtXBtn}" Margin="-10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="400,110,0,0">
+                    <TextBlock x:Name="txtYBtnTitle" Text="Y]" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="txtYBtn" Text="{Binding txtYBtn}" Margin="-10,0,0,0"/>
+                </StackPanel>
+                
+                <StackPanel Orientation="Vertical" Margin="250,10,0,0">
+                    <TextBlock x:Name="txtLBtnTitle" Text="L]" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="txtLBtn" Text="{Binding txtLBtn}" Margin="-10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="350,10,0,0">
+                    <TextBlock x:Name="txtRBtnTitle" Text="R]" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="txtRBtn" Text="{Binding txtRBtn}" Margin="-10,0,0,0"/>
+                </StackPanel>
+                
+                <StackPanel Orientation="Vertical" Margin="350,210,0,0">
+                    <TextBlock x:Name="txtStartBtnTitle" Text="Start]" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="txtStartBtn" Text="{Binding txtStartBtn}" Margin="-10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="250,210,0,0">
+                    <TextBlock x:Name="txtSelectBtnTitle" Text="Select]" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="txtSelectBtn" Text="{Binding txtSelectBtn}" Margin="-10,0,0,0"/>
+                </StackPanel>
+            </Grid>
         </StackPanel>
       </StackPanel>
 

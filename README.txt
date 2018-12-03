@@ -8,10 +8,10 @@ Arduino Project will be in another repo
 Gui takes a packet from an arduino or otherwise in the following format.
 ### 			 3
 packetNum		 3
-11bitBinaryInputs	11
+12bitBinaryInputs	12
 checksum		 3
 \r\n			 2
-Total Length:		22
+Total Length:		23
 
 Currently Working On:
 User selected key mappings

@@ -26,6 +26,9 @@ User selected key mappings
 
 Sources:
 
+Colours:
+https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.solidcolorbrush
+
 KeyDown Checking:
 https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.onkeydown#Windows_UI_Xaml_Controls_Control_OnKeyDown_Windows_UI_Xaml_Input_KeyRoutedEventArgs_
 

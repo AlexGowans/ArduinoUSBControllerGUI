@@ -418,7 +418,7 @@ namespace ControllerGUI {
         }
 
         private async Task SendPacket(string value) {
-            var dataPacket = value;
+            var dataPacket = "###" + value + @"\r\n";
 
             Task<UInt32> storeAsyncTask;
 

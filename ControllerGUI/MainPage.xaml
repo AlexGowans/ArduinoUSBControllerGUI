@@ -170,7 +170,7 @@
 
 
       <TextBox x:Name="txtSend" Margin="10,10,0,0" Width="300" HorizontalAlignment="Left"
-      Text="###010000289\r\n"/>
+      Text="010000289"/>
       <!-- Preformated value-->
       <Button x:Name="btnWrite" Content="Write" Style="{StaticResource MyButtonStyle}"
                   Margin="10,10,0,0" Click="btnWrite_Click" Foreground="White" Background="#FF5D5858"

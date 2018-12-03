@@ -96,8 +96,7 @@ namespace ControllerGUI
         private void OnKeyDown(object sender, KeyRoutedEventArgs e) {
             selectedBinding.Content = (char)e.Key;  // set the selected binding to the pressed key
             selectedBinding.Background = new SolidColorBrush(Color.FromArgb(255, 93, 88, 88));  //#FF5D5858  //Reset background
-            selectedBinding = new Button(); //clear the selected            
-            
+            selectedBinding = new Button(); //clear the selected
         }
 
         

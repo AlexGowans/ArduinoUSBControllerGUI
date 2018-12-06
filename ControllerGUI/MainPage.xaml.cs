@@ -55,29 +55,6 @@ namespace ControllerGUI {
         private void btnRefreshList_Click(object sender, RoutedEventArgs e) {
             RefreshDeviceList();
         }
-
-        //Send
-        private async void btnWrite_Click(object sender, RoutedEventArgs e) {
-            //Get Colour
-            int r = 255;
-            int g = 255;
-            int b = 255;
-            string rs = r.ToString();
-            while(rs.Length < 3) {
-                rs = "0" + rs;
-            }
-            string gs = g.ToString();
-            while (gs.Length < 3)
-            {
-                gs = "0" + gs;
-            }
-            string bs = b.ToString();
-            while (bs.Length < 3)
-            {
-                bs = "0" + bs;
-            }
-            serialController.PreparePacketSend(rs.ToString()+gs.ToString()+bs.ToString());
-        }
         
         //Open/Close dropdown menus
         private void btnDCDropdown_Click(object sender, RoutedEventArgs e) {
@@ -136,11 +113,16 @@ namespace ControllerGUI {
             //}
             this.Frame.Navigate(typeof(ChangeKeyBindings));
         }
-        #endregion
 
-        private void myColorPicker_ColorChanged(ColorPicker sender, ColorChangedEventArgs args)
-        {
-
+        private void myColorPicker_ColorChanged(ColorPicker sender, ColorChangedEventArgs args) {
+            string sr = args.NewColor.R.ToString();
+            while (sr.Length < 3) sr = "0" + sr;
+            string sg = args.NewColor.G.ToString();
+            while (sg.Length < 3) sg = "0" + sg;
+            string sb = args.NewColor.B.ToString();
+            while (sb.Length < 3) sb = "0" + sb;
+            serialController.PreparePacketSend(sr+sg+sb);
         }
+        #endregion        
     }
 }

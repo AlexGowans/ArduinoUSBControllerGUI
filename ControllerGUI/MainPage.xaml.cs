@@ -62,22 +62,21 @@ namespace ControllerGUI {
             int r = 255;
             int g = 255;
             int b = 255;
-            int chkSum = (r + g + b);
             string rs = r.ToString();
-            while(rs.Length < 4) {
+            while(rs.Length < 3) {
                 rs = "0" + rs;
             }
             string gs = g.ToString();
-            while (gs.Length < 4)
+            while (gs.Length < 3)
             {
                 gs = "0" + gs;
             }
             string bs = b.ToString();
-            while (bs.Length < 4)
+            while (bs.Length < 3)
             {
                 bs = "0" + bs;
             }
-            serialController.PreparePacketSend(rs.ToString()+gs.ToString()+bs.ToString()+chkSum.ToString());
+            serialController.PreparePacketSend(rs.ToString()+gs.ToString()+bs.ToString());
         }
         
         //Open/Close dropdown menus
@@ -138,5 +137,10 @@ namespace ControllerGUI {
             this.Frame.Navigate(typeof(ChangeKeyBindings));
         }
         #endregion
+
+        private void myColorPicker_ColorChanged(ColorPicker sender, ColorChangedEventArgs args)
+        {
+
+        }
     }
 }

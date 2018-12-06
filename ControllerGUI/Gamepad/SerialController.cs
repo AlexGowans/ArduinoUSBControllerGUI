@@ -304,7 +304,7 @@ namespace ControllerGUI {
                 if (received[0] == '#') {    //checking the packet follows protocol    ###
                     if (received.Length > 3) {      //Is it a complete packet
                         if (received[2] == '#') {        //Is it still following protocol?
-                            if (received.Length > 22) {     //Full length?
+                            if (received.Length > 21) {     //Full length?
 
                                 #region Calculate the Check Sum and prepare to compare
                                 for (int i = 3; i < 18; i++) {
@@ -407,6 +407,7 @@ namespace ControllerGUI {
         //Send Data]
         public async void PreparePacketSend(string dataPacket) {
             if (serialPort != null) {    //dont send if nothing to send to
+                dataPacket = "###" + dataPacket + @"\r\n";
                 dataWriterObject = new DataWriter(serialPort.OutputStream);
                 await SendPacket(dataPacket);
 
@@ -417,9 +418,7 @@ namespace ControllerGUI {
             }
         }
 
-        private async Task SendPacket(string value) {
-            var dataPacket = "###" + value + @"\r\n";
-
+        private async Task SendPacket(string dataPacket) {
             Task<UInt32> storeAsyncTask;
 
             if (dataPacket.Length != 0) {

@@ -3,7 +3,14 @@ README:
 This gui will read a packet from an arduino based controller and then simulate a keypress.
 Good for emulators n ting.
 
+USE:
+Mainpage initiates a serialController and connects to the device when prompted
+This serialController is also the dataContext for the XAML bindings.
+Serial controller reads packets from the arduino (see below) in order to give commands to its own game controller class
+the game controller uses injected input to simulate key presses
 
+
+PACKET INFO:
 Gui takes a packet from an arduino or otherwise in the following format.
 ### 			 3
 packetNum		 3
@@ -11,8 +18,10 @@ packetNum		 3
 checksum		 3
 \r\n			 4
 Total Length:		25
-This packet is sent constantly at an ideal rate of 40packets/s
-1 packet every 25mS
+This packet is sent constantly at an ideal rate of:
+40packets/S
+25mS/packet
+1000bytes/S
 
 GUI to Arduino Packet for RGB.
 ###			 3

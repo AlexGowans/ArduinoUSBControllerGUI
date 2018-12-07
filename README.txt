@@ -3,19 +3,26 @@ README:
 This gui will read a packet from an arduino based controller and then simulate a keypress.
 Good for emulators n ting.
 
-Arduino Project will be in another repo
 
 Gui takes a packet from an arduino or otherwise in the following format.
 ### 			 3
 packetNum		 3
 12bitBinaryInputs	12
 checksum		 3
-\r\n			 2
-Total Length:		23
+\r\n			 4
+Total Length:		25
+This packet is sent constantly at an ideal rate of 40packets/s
+1 packet every 25mS
 
-Currently Working On:
-User selected key mappings
-
+GUI to Arduino Packet for RGB.
+###			 3
+R - 000-255		 3
+G - 000-255		 3
+B - 000-255		 3
+checksum		 3
+\r\n			 4
+Total Length		19
+This packet is sent only when a change is made on the colour slider in the GUI settings
 
 
 

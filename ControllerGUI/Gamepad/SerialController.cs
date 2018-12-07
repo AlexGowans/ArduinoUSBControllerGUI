@@ -407,7 +407,13 @@ namespace ControllerGUI {
         //Send Data]
         public async void PreparePacketSend(string dataPacket) {
             if (serialPort != null) {    //dont send if nothing to send to
-                dataPacket = "###" + dataPacket + @"\r\n";
+                dataPacket = "###" + dataPacket;
+                int checkSum = 0;
+                for (int i = 3; i < 12; i++) {
+                     checkSum += (byte)dataPacket[i];//calculate check sum
+                }
+                checkSum %= 1000;
+                dataPacket = dataPacket + checkSum.ToString() + @"\r\n";
                 dataWriterObject = new DataWriter(serialPort.OutputStream);
                 await SendPacket(dataPacket);
 
@@ -428,7 +434,7 @@ namespace ControllerGUI {
 
                 UInt32 bytesWritten = await storeAsyncTask;
                 if (bytesWritten > 0) {
-                    txtMessage = "Value sent correctly";
+                    txtMessage = "Value sent correctly  " + dataPacket;
                 }
             }
             else {

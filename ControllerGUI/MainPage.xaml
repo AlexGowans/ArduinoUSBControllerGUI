@@ -148,6 +148,7 @@
             <TextBlock Text="Error:"/>
             <TextBlock x:Name="txtErrorMsg" Text="{Binding txtErrorMsg}" Margin="10,0,0,0"/>
           </StackPanel>
+            <TextBlock x:Name="txtLostPackets" Text="{Binding txtLostPackets}" Margin="10,0,0,0"/>
         </StackPanel>
       </StackPanel>
 

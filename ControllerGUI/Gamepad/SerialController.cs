@@ -46,6 +46,7 @@ namespace ControllerGUI {
 
         private GameController gameController = new GameController();
 
+
         #region XAML BINDINGS
         private string _txtMessage = "No Device connected";
         public string txtMessage {
@@ -199,6 +200,21 @@ namespace ControllerGUI {
             set {
                 _txtSelectBtn = value;
                 OnPropertyChanged("txtSelectBtn");
+            }
+        }
+
+        private int _lostPackets;
+        private int lostPackets {           //Change this one
+            get { return _lostPackets; }
+            set {
+                _lostPackets = value;
+                txtLostPackets = _lostPackets.ToString();
+            }
+        }
+        public string txtLostPackets {
+            get { return "Lost Packets: " + _lostPackets.ToString(); }
+            set {
+                OnPropertyChanged("txtLostPackets");
             }
         }
 
@@ -393,11 +409,13 @@ namespace ControllerGUI {
                         }
                         else {                          //It's not yo
                             received = "";
+                            lostPackets += 1;
                         }
                     }
                 }
                 else {                    //Otherwise clear the buffer
                     received = "";
+                    lostPackets += 1;
                 }
             }
         }
@@ -443,7 +461,7 @@ namespace ControllerGUI {
         }
         #endregion
 
-        public async void Disconnect() {
+        public async void Disconnect() { //this doenst work as intended
             serialPort.Dispose();
         }
     }

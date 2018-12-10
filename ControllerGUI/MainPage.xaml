@@ -31,13 +31,10 @@
             </ListBox.ItemTemplate>
           </ListBox>
           <StackPanel Orientation="Horizontal" Margin="-10,0,0,0">
-            <Button x:Name="btnRefreshList" Style="{StaticResource MyButtonStyle}"
+                        <Button x:Name="btnRefreshList" Style="{StaticResource MyButtonStyle}"
                 Margin="10,10,0,0" Click="btnRefreshList_Click" Foreground="White" Background="#FF5D5858"
-                Height="50" Width="50">
-              <StackPanel>
-                <SymbolIcon Symbol ="Refresh"/>
-              </StackPanel>
-            </Button>
+                Height="50" Width="70" Content="Refresh">
+                        </Button>
             <Button x:Name="btnConnectToDevice" Content="Connect" Style="{StaticResource MyButtonStyle}"
                 Margin="10,10,0,0" Click="btnConnectToDevice_Click" Foreground="White" Background="#FF5D5858"
                 Height="50" Width="70"/>
